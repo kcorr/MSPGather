@@ -1,0 +1,64 @@
++----------------------------------------------------------------------+
+| Device State                                                         |
++----------------------------------------------------------------------+
+
+             AzureAdJoined : NO
+          EnterpriseJoined : NO
+              DomainJoined : YES
+                DomainName : CONTOSO
+           Virtual Desktop : NOT SET
+               Device Name : CONTOSO-LT088.corp.contoso.com
+
++----------------------------------------------------------------------+
+| User State                                                           |
++----------------------------------------------------------------------+
+
+                    NgcSet : NO
+           WorkplaceJoined : NO
+             WamDefaultSet : NO
+
++----------------------------------------------------------------------+
+| SSO State                                                            |
++----------------------------------------------------------------------+
+
+                AzureAdPrt : NO
+       AzureAdPrtAuthority : 
+             EnterprisePrt : NO
+    EnterprisePrtAuthority : 
+                 OnPremTgt : YES
+                  CloudTgt : NO
+
++----------------------------------------------------------------------+
+| Diagnostic Data                                                      |
++----------------------------------------------------------------------+
+
+     Diagnostics Reference : www.microsoft.com/aadjerrors
+              User Context : SYSTEM
+               Client Time : 2025-06-02 10:15:09.000 UTC
+      AD Connectivity Test : PASS
+     AD Configuration Test : PASS
+        DRS Discovery Test : FAIL [0x801c001f/0x80072ee2]
+     DRS Connectivity Test : SKIPPED
+    Token acquisition Test : SKIPPED
+     Fallback to Sync-Join : ENABLED
+
+     Previous Registration : 2025-06-02 10:13:58.000 UTC
+               Error Phase : discover
+          Client ErrorCode : 0x801c001f
+
++----------------------------------------------------------------------+
+| IE Proxy Config for Current User                                     |
++----------------------------------------------------------------------+
+
+      Auto Detect Settings : NO
+    Auto-Configuration URL : 
+         Proxy Server List : proxy.contoso.com:8080
+         Proxy Bypass List : <local>;*.contoso.com
+
++----------------------------------------------------------------------+
+| WinHttp Default Proxy Config                                         |
++----------------------------------------------------------------------+
+
+               Access Type : DIRECT
+
+For more information, please visit https://www.microsoft.com/aadjerrors

@@ -1,0 +1,114 @@
++----------------------------------------------------------------------+
+| Device State                                                         |
++----------------------------------------------------------------------+
+
+             AzureAdJoined : YES
+          EnterpriseJoined : NO
+              DomainJoined : YES
+                DomainName : CONTOSO
+           Virtual Desktop : NOT SET
+               Device Name : CONTOSO-LT042.corp.contoso.com
+
++----------------------------------------------------------------------+
+| Device Details                                                       |
++----------------------------------------------------------------------+
+
+                  DeviceId : 3f9c2a71-5e4b-4d8a-9c1e-7b2d6f0a8e14
+                Thumbprint : 4A7F2C9E1B3D5F6A8C0E2B4D6F8A1C3E5B7D9F02
+ DeviceCertificateValidity : [ 2025-03-11 08:14:02.000 UTC -- 2035-03-11 08:44:02.000 UTC ]
+            KeyContainerId : 8d1e4b7a-2c5f-4e9b-a3d6-0f7c2e5b8a91
+               KeyProvider : Microsoft Platform Crypto Provider
+              TpmProtected : YES
+          DeviceAuthStatus : SUCCESS
+
++----------------------------------------------------------------------+
+| Tenant Details                                                       |
++----------------------------------------------------------------------+
+
+                TenantName : Contoso Ltd
+                  TenantId : 11111111-2222-3333-4444-555555555555
+               AuthCodeUrl : https://login.microsoftonline.com/11111111-2222-3333-4444-555555555555/oauth2/authorize
+            AccessTokenUrl : https://login.microsoftonline.com/11111111-2222-3333-4444-555555555555/oauth2/token
+                    MdmUrl : https://enrollment.manage.microsoft.com/enrollmentserver/discovery.svc
+                 MdmTouUrl : https://portal.manage.microsoft.com/TermsofUse.aspx
+          MdmComplianceUrl : https://portal.manage.microsoft.com/?portalAction=Compliance
+               SettingsUrl : 
+            JoinSrvVersion : 2.0
+                JoinSrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/device/
+                 JoinSrvId : urn:ms-drs:enterpriseregistration.windows.net
+             KeySrvVersion : 1.0
+                 KeySrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/key/
+                  KeySrvId : urn:ms-drs:enterpriseregistration.windows.net
+                   KerbSpn : adrs/enterpriseregistration.windows.net
+                   KerbUrl : https://login.microsoftonline.com/11111111-2222-3333-4444-555555555555/kerberos
+
++----------------------------------------------------------------------+
+| User State                                                           |
++----------------------------------------------------------------------+
+
+                    NgcSet : YES
+                  NgcKeyId : {6b2e9d14-7a3c-4f58-b1e0-9c4d2a7f3e65}
+                  CanReset : DestructiveAndNonDestructive
+           WorkplaceJoined : NO
+             WamDefaultSet : YES
+       WamDefaultAuthority : organizations
+              WamDefaultId : https://login.microsoft.com
+            WamDefaultGUID : {0A1B2C3D-4E5F-4061-8273-94A5B6C7D8E9} (AzureAd)
+
++----------------------------------------------------------------------+
+| SSO State                                                            |
++----------------------------------------------------------------------+
+
+                AzureAdPrt : YES
+      AzureAdPrtUpdateTime : 2025-06-02 09:35:12.000 UTC
+      AzureAdPrtExpiryTime : 2025-06-16 09:35:11.000 UTC
+       AzureAdPrtAuthority : https://login.microsoftonline.com/11111111-2222-3333-4444-555555555555
+             EnterprisePrt : NO
+    EnterprisePrtAuthority : 
+                 OnPremTgt : YES
+                  CloudTgt : YES
+         KerbTopLevelNames : .windows.net,.windows.net:1433,.windows.net:3342,.azure.net,.azure.net:1433,.azure.net:3342
+
++----------------------------------------------------------------------+
+| Diagnostic Data                                                      |
++----------------------------------------------------------------------+
+
+        AadRecoveryEnabled : NO
+    Executing Account Name : CONTOSO\meganb, meganb@contoso.com
+               KeySignTest : PASSED
+
+        DisplayNameUpdated : YES
+          OsVersionUpdated : YES
+           HostNameUpdated : YES
+
+      Last HostName Update : NONE
+
++----------------------------------------------------------------------+
+| IE Proxy Config for Current User                                     |
++----------------------------------------------------------------------+
+
+      Auto Detect Settings : YES
+    Auto-Configuration URL : 
+         Proxy Server List : 
+         Proxy Bypass List : 
+
++----------------------------------------------------------------------+
+| WinHttp Default Proxy Config                                         |
++----------------------------------------------------------------------+
+
+               Access Type : DIRECT
+
++----------------------------------------------------------------------+
+| Ngc Prerequisite Check                                               |
++----------------------------------------------------------------------+
+
+            IsDeviceJoined : YES
+             IsUserAzureAD : YES
+             PolicyEnabled : YES
+          PostLogonEnabled : YES
+            DeviceEligible : YES
+        SessionIsNotRemote : YES
+            CertEnrollment : none
+              PreReqResult : WillProvision
+
+For more information, please visit https://www.microsoft.com/aadjerrors

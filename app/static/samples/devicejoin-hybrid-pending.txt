@@ -1,0 +1,69 @@
++----------------------------------------------------------------------+
+| Device State                                                         |
++----------------------------------------------------------------------+
+
+             AzureAdJoined : NO
+          EnterpriseJoined : NO
+              DomainJoined : YES
+                DomainName : CONTOSO
+           Virtual Desktop : NOT SET
+               Device Name : CONTOSO-WS117.corp.contoso.com
+
++----------------------------------------------------------------------+
+| User State                                                           |
++----------------------------------------------------------------------+
+
+                    NgcSet : NO
+           WorkplaceJoined : NO
+             WamDefaultSet : NO
+
++----------------------------------------------------------------------+
+| SSO State                                                            |
++----------------------------------------------------------------------+
+
+                AzureAdPrt : NO
+       AzureAdPrtAuthority : 
+             EnterprisePrt : NO
+    EnterprisePrtAuthority : 
+                 OnPremTgt : YES
+                  CloudTgt : NO
+
++----------------------------------------------------------------------+
+| Diagnostic Data                                                      |
++----------------------------------------------------------------------+
+
+     Diagnostics Reference : www.microsoft.com/aadjerrors
+              User Context : UN-ELEVATED User
+               Client Time : 2025-06-02 10:02:41.000 UTC
+      AD Connectivity Test : PASS
+     AD Configuration Test : PASS
+        DRS Discovery Test : PASS
+     DRS Connectivity Test : PASS
+    Token acquisition Test : PASS
+     Fallback to Sync-Join : ENABLED
+
+     Previous Registration : 2025-06-02 09:41:05.000 UTC
+         Registration Type : sync
+               Error Phase : join
+          Client ErrorCode : 0x801c03f2
+          Server ErrorCode : DirectoryError
+            Server Message : The device object by the given id (5c8e1a3d-9f27-4b6e-8d40-2a7c9e1f6b53) is not found.
+              Https Status : 400
+                Request Id : 0d4f7b2e-6a91-4c3d-b8e5-1f2a9c7d4e60
+
++----------------------------------------------------------------------+
+| IE Proxy Config for Current User                                     |
++----------------------------------------------------------------------+
+
+      Auto Detect Settings : YES
+    Auto-Configuration URL : 
+         Proxy Server List : 
+         Proxy Bypass List : 
+
++----------------------------------------------------------------------+
+| WinHttp Default Proxy Config                                         |
++----------------------------------------------------------------------+
+
+               Access Type : DIRECT
+
+For more information, please visit https://www.microsoft.com/aadjerrors

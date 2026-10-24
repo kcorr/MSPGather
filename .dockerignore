@@ -1,0 +1,16 @@
+**/__pycache__
+**/*.pyc
+.git
+.github
+.venv
+.env
+.env.*
+.claude
+.pytest_cache
+data
+tests
+docs
+*.md
+docker-compose*.yml
+requirements-dev.txt
+pyproject.toml

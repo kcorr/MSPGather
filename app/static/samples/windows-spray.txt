@@ -1,0 +1,1582 @@
+Level,Date and Time,Source,Event ID,Task Category
+Information,10/22/2026 2:10:07 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		administrator
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:10:21 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		administrator
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:10:33 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		administrator
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:10:44 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		admin
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:10:53 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		admin
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:11:00 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		admin
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:11:15 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		scanner
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:11:28 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		scanner
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:11:39 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		scanner
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:11:49 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		backup
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:11:57 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		backup
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:12:12 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		backup
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:12:26 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		test
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:12:38 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		test
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:12:48 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		test
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:12:57 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		user1
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:13:04 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		user1
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:13:18 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		user1
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:13:31 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		jsmith
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:13:42 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		jsmith
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:13:51 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		jsmith
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:13:59 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		akumar
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:14:14 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		akumar
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:14:27 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		akumar
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:14:39 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		reception
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:14:49 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		reception
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:14:57 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		reception
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:15:04 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		helpdesk
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:15:18 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		helpdesk
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:15:30 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		helpdesk
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:15:41 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		sql
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:15:50 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		sql
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:15:57 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		sql
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:16:12 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		ftp
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:16:25 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		ftp
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:16:36 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		ftp
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:16:46 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		guest
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:16:54 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		guest
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:17:09 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		guest
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:17:23 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		lchen
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:17:35 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		lchen
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:17:45 AM,Microsoft-Windows-Security-Auditing,4625,Logon,"An account failed to log on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		RDS01$
+	Account Domain:		CONTOSO
+	Logon ID:		0x3E7
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		NULL SID
+	Account Name:		lchen
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x4f8
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+Information,10/22/2026 2:18:15 AM,Microsoft-Windows-Security-Auditing,4624,Logon,"An account was successfully logged on.
+
+Subject:
+	Security ID:		NULL SID
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Logon Information:
+	Logon Type:		3
+	Restricted Admin Mode:	-
+	Virtual Account:		No
+	Elevated Token:		No
+
+New Logon:
+	Security ID:		S-1-5-21-1004336348-1177238915-682003330-1201
+	Account Name:		backup
+	Account Domain:		CONTOSO
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	203.0.113.45
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos"

@@ -1,0 +1,28 @@
+{
+  "organization-name": "Google Inc.",
+  "date-range": { "start-datetime": "2026-10-20T00:00:00Z", "end-datetime": "2026-10-20T23:59:59Z" },
+  "contact-info": "smtp-tls-reporting@google.com",
+  "report-id": "2026-10-20T00:00:00Z_contoso.com",
+  "policies": [
+    {
+      "policy": {
+        "policy-type": "sts",
+        "policy-string": ["version: STSv1", "mode: enforce", "mx: contoso-com.mail.protection.outlook.com", "mx: mx2.contoso.com", "max_age: 604800"],
+        "policy-domain": "contoso.com",
+        "mx-host": ["contoso-com.mail.protection.outlook.com", "mx2.contoso.com"]
+      },
+      "summary": { "total-successful-session-count": 5326, "total-failure-session-count": 212 },
+      "failure-details": [
+        { "result-type": "certificate-expired", "sending-mta-ip": "209.85.220.41", "receiving-mx-hostname": "mx2.contoso.com", "receiving-ip": "203.0.113.25", "failed-session-count": 187 },
+        { "result-type": "certificate-host-mismatch", "sending-mta-ip": "209.85.220.69", "receiving-mx-hostname": "mx2.contoso.com", "receiving-ip": "203.0.113.25", "failed-session-count": 25 }
+      ]
+    },
+    {
+      "policy": { "policy-type": "no-policy-found", "policy-domain": "fabrikam.com" },
+      "summary": { "total-successful-session-count": 1180, "total-failure-session-count": 14 },
+      "failure-details": [
+        { "result-type": "starttls-not-supported", "sending-mta-ip": "209.85.220.41", "receiving-mx-hostname": "mail.fabrikam.com", "receiving-ip": "198.51.100.12", "failed-session-count": 14, "additional-information": "Server did not advertise STARTTLS" }
+      ]
+    }
+  ]
+}

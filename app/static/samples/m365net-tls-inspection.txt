@@ -1,0 +1,487 @@
+PS C:\Users\a.vance> .\mspgather-m365.ps1
+-----BEGIN MSPGATHER M365 NETWORK-----
+{
+    "tool": "mspgather-m365-collector",
+    "version": 1,
+    "collected_utc": "2026-10-21T14:32:08.1180000Z",
+    "computer": "CONTOSO-LT042",
+    "user": "CONTOSO\\a.vance",
+    "os": "Microsoft Windows 11 Pro 10.0.22631",
+    "ps_version": "5.1.22621.4391",
+    "tenant": "contoso",
+    "duration_s": 14.6,
+    "public_ip": {
+        "ip": "203.0.113.45",
+        "source": "api.ipify.org (public echo service, via the system proxy)",
+        "error": null
+    },
+    "proxy": {
+        "winhttp_raw": "Current WinHTTP proxy settings:\r\n\r\n    Direct access (no proxy server).",
+        "winhttp_direct": true,
+        "winhttp_proxy": null,
+        "winhttp_bypass": null,
+        "winhttp_source": "registry",
+        "wininet": {
+            "proxy_enable": 0,
+            "proxy_server": null,
+            "proxy_override": null,
+            "autoconfig_url": "http://proxy.contoso.com/proxy.pac",
+            "auto_detect": false,
+            "flags": 5
+        },
+        "proxy_settings_per_user_policy": null,
+        "system_proxy_for_login": "DIRECT",
+        "env": {
+            "http_proxy": null,
+            "https_proxy": null,
+            "no_proxy": null
+        },
+        "wpad_dns": []
+    },
+    "hosts_file": [],
+    "endpoints": [
+        {
+            "host": "login.microsoftonline.com",
+            "purpose": "Entra ID sign-in",
+            "dns": {
+                "ok": true,
+                "addresses": [
+                    "198.51.100.10",
+                    "198.51.100.11"
+                ],
+                "cnames": [
+                    "login.mso.msidentity.com",
+                    "ak.privatelink.msidentity.com",
+                    "www.tm.a.prd.aadg.akadns.net"
+                ],
+                "ms": 4,
+                "error": null
+            },
+            "tcp": {
+                "ok": true,
+                "ms": 18,
+                "ip": "198.51.100.10",
+                "error": null
+            },
+            "tls": {
+                "ok": true,
+                "ms": 710,
+                "protocol": "Tls12",
+                "cipher": "Aes256",
+                "subject": "CN=stamp2.login.microsoftonline.com, O=Microsoft Corporation, L=Redmond, S=WA, C=US",
+                "issuer": "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US",
+                "thumbprint": "0000000080000000000000000000000000000000",
+                "not_after": "2027-04-18T23:59:59.0000000Z",
+                "chain": [
+                    "CN=stamp2.login.microsoftonline.com, O=Microsoft Corporation, L=Redmond, S=WA, C=US",
+                    "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US"
+                ],
+                "chain_valid": true,
+                "chain_status": "",
+                "error": null
+            },
+            "proxied": {
+                "used": false
+            }
+        },
+        {
+            "host": "device.login.microsoftonline.com",
+            "purpose": "Device sign-in / PRT",
+            "dns": {
+                "ok": true,
+                "addresses": [
+                    "198.51.100.12",
+                    "198.51.100.13"
+                ],
+                "cnames": [
+                    "device.login.mso.msidentity.com",
+                    "a.privatelink.msidentity.com",
+                    "prda.aadg.msidentity.com",
+                    "www.tm.a.prd.aadg.akadns.net"
+                ],
+                "ms": 2,
+                "error": null
+            },
+            "tcp": {
+                "ok": true,
+                "ms": 12,
+                "ip": "198.51.100.12",
+                "error": null
+            },
+            "tls": {
+                "ok": true,
+                "ms": 655,
+                "protocol": "Tls12",
+                "cipher": "Aes256",
+                "subject": "CN=login.windows.net, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+                "issuer": "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US",
+                "thumbprint": "0000800000000000000000000000000800000000",
+                "not_after": "2027-04-18T23:59:59.0000000Z",
+                "chain": [
+                    "CN=login.windows.net, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+                    "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US"
+                ],
+                "chain_valid": true,
+                "chain_status": "",
+                "error": null
+            },
+            "proxied": {
+                "used": false
+            }
+        },
+        {
+            "host": "aadcdn.msftauth.net",
+            "purpose": "Sign-in page content",
+            "dns": {
+                "ok": true,
+                "addresses": [
+                    "198.51.100.14",
+                    "198.51.100.15"
+                ],
+                "cnames": [
+                    "www.tm.aadcdn.msftauth.akadns.net",
+                    "aadcdn.msftauth.edgekey.net",
+                    "e329293.dscd.akamaiedge.net"
+                ],
+                "ms": 5,
+                "error": null
+            },
+            "tcp": {
+                "ok": true,
+                "ms": 16,
+                "ip": "198.51.100.14",
+                "error": null
+            },
+            "tls": {
+                "ok": true,
+                "ms": 38,
+                "protocol": "Tls12",
+                "cipher": "Aes256",
+                "subject": "CN=idnaakamaicdn.msftauth.net, O=Microsoft Corporation, L=Redmond, S=WA, C=US",
+                "issuer": "CN=Microsoft TLS G2 ECC CA OCSP 02, O=Microsoft Corporation, C=US",
+                "thumbprint": "0080000008000000000000000000000000000000",
+                "not_after": "2027-04-18T23:59:59.0000000Z",
+                "chain": [
+                    "CN=idnaakamaicdn.msftauth.net, O=Microsoft Corporation, L=Redmond, S=WA, C=US",
+                    "CN=Microsoft TLS G2 ECC CA OCSP 02, O=Microsoft Corporation, C=US",
+                    "CN=DigiCert Global Root G2, OU=www.digicert.com, O=DigiCert Inc, C=US"
+                ],
+                "chain_valid": true,
+                "chain_status": "",
+                "error": null
+            },
+            "proxied": {
+                "used": false
+            }
+        },
+        {
+            "host": "enterpriseregistration.windows.net",
+            "purpose": "Device registration (Entra join)",
+            "dns": {
+                "ok": true,
+                "addresses": [
+                    "198.51.100.16",
+                    "198.51.100.17"
+                ],
+                "cnames": [
+                    "na.privatelink.msidentity.com",
+                    "prdf.aadg.msidentity.com",
+                    "www.tm.f.prd.aadg.akadns.net"
+                ],
+                "ms": 3,
+                "error": null
+            },
+            "tcp": {
+                "ok": true,
+                "ms": 21,
+                "ip": "198.51.100.16",
+                "error": null
+            },
+            "tls": {
+                "ok": true,
+                "ms": 590,
+                "protocol": "Tls12",
+                "cipher": "Aes256",
+                "subject": "CN=enterpriseregistration.windows.net, O=Microsoft Corporation, L=Redmond, S=WA, C=US",
+                "issuer": "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US",
+                "thumbprint": "0000000000000000000000000000000000000000",
+                "not_after": "2027-04-18T23:59:59.0000000Z",
+                "chain": [
+                    "CN=enterpriseregistration.windows.net, O=Microsoft Corporation, L=Redmond, S=WA, C=US",
+                    "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US"
+                ],
+                "chain_valid": true,
+                "chain_status": "",
+                "error": null
+            },
+            "proxied": {
+                "used": false
+            }
+        },
+        {
+            "host": "outlook.office365.com",
+            "purpose": "Exchange Online",
+            "dns": {
+                "ok": true,
+                "addresses": [
+                    "198.51.100.18",
+                    "198.51.100.19"
+                ],
+                "cnames": [
+                    "outlook.cloud.microsoft",
+                    "acdcatm.outlook.mira.tm.svc.cloud.microsoft",
+                    "atm.outlook.mira.tm.svc.cloud.microsoft"
+                ],
+                "ms": 3,
+                "error": null
+            },
+            "tcp": {
+                "ok": true,
+                "ms": 19,
+                "ip": "198.51.100.18",
+                "error": null
+            },
+            "tls": {
+                "ok": true,
+                "ms": 655,
+                "protocol": "Tls12",
+                "cipher": "Aes256",
+                "subject": "CN=outlook.com, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+                "issuer": "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US",
+                "thumbprint": "0008000008000000000000800000000000000080",
+                "not_after": "2027-04-18T23:59:59.0000000Z",
+                "chain": [
+                    "CN=outlook.com, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+                    "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US"
+                ],
+                "chain_valid": true,
+                "chain_status": "",
+                "error": null
+            },
+            "proxied": {
+                "used": false
+            }
+        },
+        {
+            "host": "outlook.office.com",
+            "purpose": "Outlook on the web",
+            "dns": {
+                "ok": true,
+                "addresses": [
+                    "198.51.100.20",
+                    "198.51.100.21"
+                ],
+                "cnames": [
+                    "outlook.cloud.microsoft",
+                    "acdcatm.outlook.mira.tm.svc.cloud.microsoft",
+                    "atm.outlook.mira.tm.svc.cloud.microsoft"
+                ],
+                "ms": 4,
+                "error": null
+            },
+            "tcp": {
+                "ok": true,
+                "ms": 17,
+                "ip": "198.51.100.20",
+                "error": null
+            },
+            "tls": {
+                "ok": true,
+                "ms": 38,
+                "protocol": "Tls12",
+                "cipher": "Aes256",
+                "subject": "CN=outlook.com, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+                "issuer": "CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1, O=DigiCert Inc, C=US",
+                "thumbprint": "0000000000000000000000000000000000000000",
+                "not_after": "2027-04-18T23:59:59.0000000Z",
+                "chain": [
+                    "CN=outlook.com, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+                    "CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1, O=DigiCert Inc, C=US",
+                    "CN=DigiCert Global Root G2, OU=www.digicert.com, O=DigiCert Inc, C=US"
+                ],
+                "chain_valid": true,
+                "chain_status": "",
+                "error": null
+            },
+            "proxied": {
+                "used": false
+            }
+        },
+        {
+            "host": "autodiscover-s.outlook.com",
+            "purpose": "Autodiscover",
+            "dns": {
+                "ok": true,
+                "addresses": [
+                    "198.51.100.22",
+                    "198.51.100.23"
+                ],
+                "cnames": [
+                    "outlook.office365.com",
+                    "outlook.cloud.microsoft",
+                    "acdcatm.outlook.mira.tm.svc.cloud.microsoft",
+                    "shed.outlook.acdc.tm.svc.cloud.microsoft"
+                ],
+                "ms": 2,
+                "error": null
+            },
+            "tcp": {
+                "ok": true,
+                "ms": 15,
+                "ip": "198.51.100.22",
+                "error": null
+            },
+            "tls": {
+                "ok": true,
+                "ms": 760,
+                "protocol": "Tls12",
+                "cipher": "Aes256",
+                "subject": "CN=outlook.com, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+                "issuer": "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US",
+                "thumbprint": "0000008000000000000000000000000000000000",
+                "not_after": "2027-04-18T23:59:59.0000000Z",
+                "chain": [
+                    "CN=outlook.com, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+                    "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US"
+                ],
+                "chain_valid": true,
+                "chain_status": "",
+                "error": null
+            },
+            "proxied": {
+                "used": false
+            }
+        },
+        {
+            "host": "graph.microsoft.com",
+            "purpose": "Microsoft Graph",
+            "dns": {
+                "ok": true,
+                "addresses": [
+                    "198.51.100.24",
+                    "198.51.100.25"
+                ],
+                "cnames": [
+                    "ags.privatelink.msidentity.com",
+                    "www.tm.prd.ags.akadns.net"
+                ],
+                "ms": 5,
+                "error": null
+            },
+            "tcp": {
+                "ok": true,
+                "ms": 22,
+                "ip": "198.51.100.24",
+                "error": null
+            },
+            "tls": {
+                "ok": true,
+                "ms": 930,
+                "protocol": "Tls12",
+                "cipher": "Aes256",
+                "subject": "CN=graph.microsoft.com, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+                "issuer": "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US",
+                "thumbprint": "0000000000000000000000000008000000000000",
+                "not_after": "2027-04-18T23:59:59.0000000Z",
+                "chain": [
+                    "CN=graph.microsoft.com, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+                    "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US"
+                ],
+                "chain_valid": true,
+                "chain_status": "",
+                "error": null
+            },
+            "proxied": {
+                "used": false
+            }
+        },
+        {
+            "host": "teams.microsoft.com",
+            "purpose": "Teams",
+            "dns": {
+                "ok": true,
+                "addresses": [
+                    "198.51.100.26",
+                    "198.51.100.27"
+                ],
+                "cnames": [
+                    "teams.office.com",
+                    "tmc-g2.tm-4.office.com",
+                    "teams-office-com.s-0005.dual-s-msedge.net",
+                    "s-0005.dual-s-msedge.net"
+                ],
+                "ms": 3,
+                "error": null
+            },
+            "tcp": {
+                "ok": true,
+                "ms": 20,
+                "ip": "198.51.100.26",
+                "error": null
+            },
+            "tls": {
+                "ok": true,
+                "ms": 610,
+                "protocol": "Tls12",
+                "cipher": "Aes256",
+                "subject": "CN=teams.microsoft.com, O=Microsoft Corporation, L=Redmond, S=WA, C=US",
+                "issuer": "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US",
+                "thumbprint": "0080000000000000000000000000000008000000",
+                "not_after": "2027-04-18T23:59:59.0000000Z",
+                "chain": [
+                    "CN=teams.microsoft.com, O=Microsoft Corporation, L=Redmond, S=WA, C=US",
+                    "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US"
+                ],
+                "chain_valid": true,
+                "chain_status": "",
+                "error": null
+            },
+            "proxied": {
+                "used": false
+            }
+        },
+        {
+            "host": "contoso.sharepoint.com",
+            "purpose": "SharePoint / OneDrive",
+            "dns": {
+                "ok": true,
+                "addresses": [
+                    "198.51.100.28",
+                    "198.51.100.29"
+                ],
+                "cnames": [
+                    "contoso.sharepoint.com.dual-spov-0006.spov-msedge.net"
+                ],
+                "ms": 3,
+                "error": null
+            },
+            "tcp": {
+                "ok": true,
+                "ms": 14,
+                "ip": "198.51.100.28",
+                "error": null
+            },
+            "tls": {
+                "ok": true,
+                "ms": 640,
+                "protocol": "Tls12",
+                "cipher": "Aes256",
+                "subject": "CN=*.sharepoint.com, O=Microsoft Corporation, L=Redmond, S=WA, C=US",
+                "issuer": "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US",
+                "thumbprint": "0000000000000000000000000000080000000000",
+                "not_after": "2027-04-18T23:59:59.0000000Z",
+                "chain": [
+                    "CN=*.sharepoint.com, O=Microsoft Corporation, L=Redmond, S=WA, C=US",
+                    "E=support@fortinet.com, CN=FG200FTK21900000, OU=Certificate Authority, O=Fortinet, L=Sunnyvale, S=California, C=US"
+                ],
+                "chain_valid": true,
+                "chain_status": "",
+                "error": null
+            },
+            "proxied": {
+                "used": false
+            }
+        }
+    ]
+}
+-----END MSPGATHER M365 NETWORK-----

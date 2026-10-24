@@ -1,0 +1,52 @@
+Received: from DM6PR04MB7001.namprd04.prod.outlook.com (2603:10b6:5:3a0::12) by
+ MN2PR04MB6990.namprd04.prod.outlook.com with HTTPS; Wed, 21 Oct 2026 14:07:12
+ +0000
+Received: from us-smtp-inbound-2.mimecast.com (205.139.110.61) by
+ DM6PR04MB7001.mail.protection.outlook.com (10.167.8.70) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8100.12; Wed, 21 Oct 2026 14:07:11 +0000
+Received: from DM6PR04MB7001.namprd04.prod.outlook.com (40.107.220.95) by
+ us-smtp-inbound-2.mimecast.com with ESMTPS id mc-77aa21-3;
+ Wed, 21 Oct 2026 14:06:58 +0000
+Received: from us-smtp-inbound-1.mimecast.com (205.139.110.60) by
+ DM6PR04MB7001.mail.protection.outlook.com (10.167.8.70) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8100.12; Wed, 21 Oct 2026 14:06:40 +0000
+Received: from BN8PR04MB5550.namprd04.prod.outlook.com (40.107.220.88) by
+ us-smtp-inbound-1.mimecast.com with ESMTPS id mc-77aa11-2;
+ Wed, 21 Oct 2026 14:06:21 +0000
+Received: from us-smtp-inbound-1.mimecast.com (205.139.110.60) by
+ BN8PR04MB5550.mail.protection.outlook.com (10.167.8.71) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8100.12; Wed, 21 Oct 2026 14:06:05 +0000
+Received: from mail-relay.fabrikam.com (198.51.100.25) by
+ us-smtp-inbound-1.mimecast.com with ESMTPS id mc-77aa01-1;
+ Wed, 21 Oct 2026 14:05:50 +0000
+Received: from app01.fabrikam.local (10.0.4.15) by mail-relay.fabrikam.com
+ (Postfix) with ESMTP id 4XyZ12; Wed, 21 Oct 2026 14:05:48 +0000
+Authentication-Results: spf=fail (sender IP is 205.139.110.61)
+ smtp.mailfrom=fabrikam.com; dkim=pass (signature was verified)
+ header.d=fabrikam.com;dmarc=pass action=none header.from=fabrikam.com;compauth=pass
+ reason=100
+Received-SPF: Fail (protection.outlook.com: domain of fabrikam.com does not
+ designate 205.139.110.61 as permitted sender) receiver=protection.outlook.com;
+ client-ip=205.139.110.61; helo=us-smtp-inbound-2.mimecast.com;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fabrikam.com; s=s1;
+ h=From:To:Subject:Date:Message-ID; bh=abc123=; b=def456=
+From: "Fabrikam Billing" <billing@fabrikam.com>
+To: "Accounts Payable" <ap@contoso.com>
+Subject: Invoice 4471 - October
+Date: Wed, 21 Oct 2026 14:05:47 +0000
+Message-ID: <a1b2c3d4e5@app01.fabrikam.local>
+Return-Path: billing@fabrikam.com
+MIME-Version: 1.0
+Content-Type: text/plain
+X-MS-Exchange-Organization-Network-Message-Id: 6f1d2c3b-aaaa-bbbb-cccc-08dcf1a2b3c4
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-AuthSource: DM6PR04MB7001.namprd04.prod.outlook.com
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-Forefront-Antispam-Report: CIP:205.139.110.61;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:us-smtp-inbound-2.mimecast.com;PTR:us-smtp-inbound-2.mimecast.com;CAT:NONE;SFS:(13230040);DIR:INB;
+X-Microsoft-Antispam: BCL:0;ARA:13230040;
+X-MS-Exchange-CrossTenant-Id: 72f988bf-0000-1111-2222-2d7cd011db47
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR04MB6990

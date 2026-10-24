@@ -1,0 +1,351 @@
+Log Name:      System
+Source:        Microsoft-Windows-DistributedCOM
+Date:          10/21/2026 8:00:00 AM
+Event ID:      10016
+Task Category: None
+Level:         Warning
+Keywords:      
+User:          NT AUTHORITY\LOCAL SERVICE
+Computer:      FS01.contoso.com
+Description:
+The application-specific permission settings do not grant Local Activation permission for the COM Server application with CLSID 
+{C2F03A33-21F5-47FA-B4BB-156362A2F239}
+ and APPID 
+{316CDED5-E4AE-4B15-9113-7055D84DCC97}
+ to the user NT AUTHORITY\LOCAL SERVICE SID (S-1-5-19) from address LocalHost (Using LRPC) running in the application container Unavailable SID (Unavailable). This security permission can be modified using the Component Services administrative tool.
+
+Log Name:      System
+Source:        Service Control Manager
+Date:          10/22/2026 6:15:00 AM
+Event ID:      7031
+Task Category: None
+Level:         Error
+Keywords:      
+User:          N/A
+Computer:      FS01.contoso.com
+Description:
+The Fabrikam Backup Agent service terminated unexpectedly.  It has done this 2 time(s).  The following corrective action will be taken in 60000 milliseconds: Restart the service.
+
+Log Name:      System
+Source:        Service Control Manager
+Date:          10/21/2026 11:02:00 AM
+Event ID:      7031
+Task Category: None
+Level:         Error
+Keywords:      
+User:          N/A
+Computer:      FS01.contoso.com
+Description:
+The Fabrikam Backup Agent service terminated unexpectedly.  It has done this 1 time(s).  The following corrective action will be taken in 60000 milliseconds: Restart the service.
+
+Log Name:      System
+Source:        EventLog
+Date:          10/20/2026 1:34:00 AM
+Event ID:      6005
+Task Category: None
+Level:         Information
+Keywords:      
+User:          N/A
+Computer:      FS01.contoso.com
+Description:
+The Event log service was started.
+
+Log Name:      System
+Source:        EventLog
+Date:          10/20/2026 1:31:00 AM
+Event ID:      6006
+Task Category: None
+Level:         Information
+Keywords:      
+User:          N/A
+Computer:      FS01.contoso.com
+Description:
+The Event log service was stopped.
+
+Log Name:      System
+Source:        User32
+Date:          10/20/2026 1:30:00 AM
+Event ID:      1074
+Task Category: None
+Level:         Information
+Keywords:      
+User:          CONTOSO\admin.rlee
+Computer:      FS01.contoso.com
+Description:
+The process C:\Windows\system32\shutdown.exe (FS01) has initiated the restart of computer FS01 on behalf of user CONTOSO\admin.rlee for the following reason: Application: Maintenance (Planned)
+ Reason Code: 0x80040001
+ Shutdown Type: restart
+ Comment: Firmware update
+
+Log Name:      System
+Source:        EventLog
+Date:          10/22/2026 4:20:02 AM
+Event ID:      6005
+Task Category: None
+Level:         Information
+Keywords:      
+User:          N/A
+Computer:      FS01.contoso.com
+Description:
+The Event log service was started.
+
+Log Name:      System
+Source:        Microsoft-Windows-WER-SystemErrorReporting
+Date:          10/22/2026 4:21:00 AM
+Event ID:      1001
+Task Category: None
+Level:         Error
+Keywords:      
+User:          N/A
+Computer:      FS01.contoso.com
+Description:
+The computer has rebooted from a bugcheck.  The bugcheck was: 0x00000124 (0x0000000000000000, 0xffffb30c1a2d6028, 0x00000000be000000, 0x000000000080110a). A dump was saved in: C:\Windows\MEMORY.DMP. Report Id: 6b1f0d2e-1c3a-4f7e-9a51-0c2d7e8f9a10.
+
+Log Name:      System
+Source:        EventLog
+Date:          10/22/2026 4:20:05 AM
+Event ID:      6008
+Task Category: None
+Level:         Error
+Keywords:      
+User:          N/A
+Computer:      FS01.contoso.com
+Description:
+The previous system shutdown at 4:17:00 AM on 10/22/2026 was unexpected.
+
+Log Name:      System
+Source:        Microsoft-Windows-Kernel-Power
+Date:          10/22/2026 4:20:00 AM
+Event ID:      41
+Task Category: (63)
+Level:         Critical
+Keywords:      
+User:          SYSTEM
+Computer:      FS01.contoso.com
+Description:
+The system has rebooted without cleanly shutting down first. This error could be caused if the system stopped responding, crashed, or lost power unexpectedly.
+Event Xml:
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Kernel-Power" Guid="{331c3b3a-2005-44c2-ac5e-77220c37d6b4}" />
+    <EventID>41</EventID>
+    <Version>8</Version>
+    <Level>1</Level>
+    <Task>63</Task>
+    <TimeCreated SystemTime="2026-10-22T04:20:00.000Z" />
+    <Channel>System</Channel>
+    <Computer>FS01.contoso.com</Computer>
+  </System>
+  <EventData>
+    <Data Name="BugcheckCode">292</Data>
+    <Data Name="BugcheckParameter1">0x0</Data>
+    <Data Name="BugcheckParameter2">0xffffb30c1a2d6028</Data>
+    <Data Name="BugcheckParameter3">0x0</Data>
+    <Data Name="BugcheckParameter4">0x0</Data>
+    <Data Name="SleepInProgress">0</Data>
+    <Data Name="PowerButtonTimestamp">0</Data>
+  </EventData>
+</Event>
+
+Log Name:      System
+Source:        Microsoft-Windows-WHEA-Logger
+Date:          10/22/2026 4:16:59 AM
+Event ID:      18
+Task Category: None
+Level:         Error
+Keywords:      
+User:          LOCAL SERVICE
+Computer:      FS01.contoso.com
+Description:
+A fatal hardware error has occurred.
+
+Reported by component: Processor Core
+Error Source: Machine Check Exception
+Error Type: Cache Hierarchy Error
+Processor APIC ID: 6
+
+The details view of this entry contains further information.
+
+Log Name:      System
+Source:        EventLog
+Date:          10/21/2026 2:47:02 AM
+Event ID:      6005
+Task Category: None
+Level:         Information
+Keywords:      
+User:          N/A
+Computer:      FS01.contoso.com
+Description:
+The Event log service was started.
+
+Log Name:      System
+Source:        Microsoft-Windows-WER-SystemErrorReporting
+Date:          10/21/2026 2:48:00 AM
+Event ID:      1001
+Task Category: None
+Level:         Error
+Keywords:      
+User:          N/A
+Computer:      FS01.contoso.com
+Description:
+The computer has rebooted from a bugcheck.  The bugcheck was: 0x00000124 (0x0000000000000000, 0xffffb30c1a2d6028, 0x00000000be000000, 0x000000000080110a). A dump was saved in: C:\Windows\MEMORY.DMP. Report Id: 6b1f0d2e-1c3a-4f7e-9a51-0c2d7e8f9a10.
+
+Log Name:      System
+Source:        EventLog
+Date:          10/21/2026 2:47:05 AM
+Event ID:      6008
+Task Category: None
+Level:         Error
+Keywords:      
+User:          N/A
+Computer:      FS01.contoso.com
+Description:
+The previous system shutdown at 2:44:00 AM on 10/21/2026 was unexpected.
+
+Log Name:      System
+Source:        Microsoft-Windows-Kernel-Power
+Date:          10/21/2026 2:47:00 AM
+Event ID:      41
+Task Category: (63)
+Level:         Critical
+Keywords:      
+User:          SYSTEM
+Computer:      FS01.contoso.com
+Description:
+The system has rebooted without cleanly shutting down first. This error could be caused if the system stopped responding, crashed, or lost power unexpectedly.
+Event Xml:
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Kernel-Power" Guid="{331c3b3a-2005-44c2-ac5e-77220c37d6b4}" />
+    <EventID>41</EventID>
+    <Version>8</Version>
+    <Level>1</Level>
+    <Task>63</Task>
+    <TimeCreated SystemTime="2026-10-21T02:47:00.000Z" />
+    <Channel>System</Channel>
+    <Computer>FS01.contoso.com</Computer>
+  </System>
+  <EventData>
+    <Data Name="BugcheckCode">292</Data>
+    <Data Name="BugcheckParameter1">0x0</Data>
+    <Data Name="BugcheckParameter2">0xffffb30c1a2d6028</Data>
+    <Data Name="BugcheckParameter3">0x0</Data>
+    <Data Name="BugcheckParameter4">0x0</Data>
+    <Data Name="SleepInProgress">0</Data>
+    <Data Name="PowerButtonTimestamp">0</Data>
+  </EventData>
+</Event>
+
+Log Name:      System
+Source:        Microsoft-Windows-WHEA-Logger
+Date:          10/21/2026 2:43:59 AM
+Event ID:      18
+Task Category: None
+Level:         Error
+Keywords:      
+User:          LOCAL SERVICE
+Computer:      FS01.contoso.com
+Description:
+A fatal hardware error has occurred.
+
+Reported by component: Processor Core
+Error Source: Machine Check Exception
+Error Type: Cache Hierarchy Error
+Processor APIC ID: 6
+
+The details view of this entry contains further information.
+
+Log Name:      System
+Source:        Microsoft-Windows-WHEA-Logger
+Date:          10/21/2026 2:10:00 AM
+Event ID:      19
+Task Category: None
+Level:         Warning
+Keywords:      
+User:          LOCAL SERVICE
+Computer:      FS01.contoso.com
+Description:
+A corrected hardware error has occurred.
+
+Reported by component: Processor Core
+Error Source: Corrected Machine Check
+Error Type: Cache Hierarchy Error
+Processor APIC ID: 6
+
+The details view of this entry contains further information.
+
+Log Name:      System
+Source:        Microsoft-Windows-WHEA-Logger
+Date:          10/20/2026 10:31:00 PM
+Event ID:      19
+Task Category: None
+Level:         Warning
+Keywords:      
+User:          LOCAL SERVICE
+Computer:      FS01.contoso.com
+Description:
+A corrected hardware error has occurred.
+
+Reported by component: Processor Core
+Error Source: Corrected Machine Check
+Error Type: Cache Hierarchy Error
+Processor APIC ID: 6
+
+The details view of this entry contains further information.
+
+Log Name:      System
+Source:        Microsoft-Windows-WHEA-Logger
+Date:          10/20/2026 9:05:00 AM
+Event ID:      19
+Task Category: None
+Level:         Warning
+Keywords:      
+User:          LOCAL SERVICE
+Computer:      FS01.contoso.com
+Description:
+A corrected hardware error has occurred.
+
+Reported by component: Processor Core
+Error Source: Corrected Machine Check
+Error Type: Cache Hierarchy Error
+Processor APIC ID: 6
+
+The details view of this entry contains further information.
+
+Log Name:      System
+Source:        Microsoft-Windows-WHEA-Logger
+Date:          10/19/2026 2:40:00 PM
+Event ID:      19
+Task Category: None
+Level:         Warning
+Keywords:      
+User:          LOCAL SERVICE
+Computer:      FS01.contoso.com
+Description:
+A corrected hardware error has occurred.
+
+Reported by component: Processor Core
+Error Source: Corrected Machine Check
+Error Type: Cache Hierarchy Error
+Processor APIC ID: 6
+
+The details view of this entry contains further information.
+
+Log Name:      System
+Source:        Microsoft-Windows-WHEA-Logger
+Date:          10/18/2026 3:12:00 AM
+Event ID:      19
+Task Category: None
+Level:         Warning
+Keywords:      
+User:          LOCAL SERVICE
+Computer:      FS01.contoso.com
+Description:
+A corrected hardware error has occurred.
+
+Reported by component: Processor Core
+Error Source: Corrected Machine Check
+Error Type: Cache Hierarchy Error
+Processor APIC ID: 6
+
+The details view of this entry contains further information.

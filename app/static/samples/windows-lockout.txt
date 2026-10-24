@@ -1,0 +1,554 @@
+[
+    {
+        "TimeCreated": "2026-10-22T09:00:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t53797\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T09:00:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tAccount locked out.\r\n\tStatus:\t\t\t0xC0000234\r\n\tSub Status:\t\t0x0\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:55:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T08:55:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t54033\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:55:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:50:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t58346\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:50:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:45:01Z",
+        "Id": 4740,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "A user account was locked out.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tDC01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nAccount That Was Locked Out:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nAdditional Information:\r\n\tCaller Computer Name:\tSERVER01"
+    },
+    {
+        "TimeCreated": "2026-10-22T08:45:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T08:45:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t54093\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:45:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:40:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t58758\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:40:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:35:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T08:35:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t51435\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:35:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:30:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t53329\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:30:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:25:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T08:25:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t52186\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:25:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:20:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t57199\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:20:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tAccount locked out.\r\n\tStatus:\t\t\t0xC0000234\r\n\tSub Status:\t\t0x0\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:15:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T08:15:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t51487\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:15:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:10:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t59230\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:10:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:05:01Z",
+        "Id": 4740,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "A user account was locked out.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tDC01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nAccount That Was Locked Out:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nAdditional Information:\r\n\tCaller Computer Name:\tSERVER01"
+    },
+    {
+        "TimeCreated": "2026-10-22T08:05:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T08:05:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t58629\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:05:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:03:00Z",
+        "Id": 4624,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER02.contoso.com",
+        "Message": "An account was successfully logged on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nLogon Information:\r\n\tLogon Type:\t\t3\r\n\tRestricted Admin Mode:\t-\r\n\tVirtual Account:\t\tNo\r\n\tElevated Token:\t\tNo\r\n\r\nNew Logon:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1201\r\n\tAccount Name:\t\tsvc-backup\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tWKS-113\r\n\tSource Network Address:\t10.0.6.43\r\n\tSource Port:\t\t0\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tKerberos\r\n\tAuthentication Package:\tKerberos"
+    },
+    {
+        "TimeCreated": "2026-10-22T08:00:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t55682\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T08:00:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:55:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T07:55:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t51549\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:55:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:50:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t59519\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:50:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:46:00Z",
+        "Id": 4624,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER02.contoso.com",
+        "Message": "An account was successfully logged on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nLogon Information:\r\n\tLogon Type:\t\t3\r\n\tRestricted Admin Mode:\t-\r\n\tVirtual Account:\t\tNo\r\n\tElevated Token:\t\tNo\r\n\r\nNew Logon:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1201\r\n\tAccount Name:\t\tmgarcia\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tWKS-112\r\n\tSource Network Address:\t10.0.6.42\r\n\tSource Port:\t\t0\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tKerberos\r\n\tAuthentication Package:\tKerberos"
+    },
+    {
+        "TimeCreated": "2026-10-22T07:45:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T07:45:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t59363\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:45:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:40:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t57369\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:40:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tAccount locked out.\r\n\tStatus:\t\t\t0xC0000234\r\n\tSub Status:\t\t0x0\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:35:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T07:35:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t58806\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:35:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:33:20Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\takumar\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.6.41\r\n\tClient Port:\t\t52042\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:33:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\takumar\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.6.41\r\n\tClient Port:\t\t52440\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:30:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t54318\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:30:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:29:00Z",
+        "Id": 4624,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER02.contoso.com",
+        "Message": "An account was successfully logged on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nLogon Information:\r\n\tLogon Type:\t\t3\r\n\tRestricted Admin Mode:\t-\r\n\tVirtual Account:\t\tNo\r\n\tElevated Token:\t\tNo\r\n\r\nNew Logon:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1201\r\n\tAccount Name:\t\tlchen\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tWKS-111\r\n\tSource Network Address:\t10.0.6.41\r\n\tSource Port:\t\t0\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tKerberos\r\n\tAuthentication Package:\tKerberos"
+    },
+    {
+        "TimeCreated": "2026-10-22T07:25:01Z",
+        "Id": 4740,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "A user account was locked out.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tDC01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nAccount That Was Locked Out:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nAdditional Information:\r\n\tCaller Computer Name:\tSERVER01"
+    },
+    {
+        "TimeCreated": "2026-10-22T07:25:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T07:25:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t52725\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:25:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:20:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t52872\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:20:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:15:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T07:15:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t56196\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:15:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:12:00Z",
+        "Id": 4624,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER02.contoso.com",
+        "Message": "An account was successfully logged on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nLogon Information:\r\n\tLogon Type:\t\t3\r\n\tRestricted Admin Mode:\t-\r\n\tVirtual Account:\t\tNo\r\n\tElevated Token:\t\tNo\r\n\r\nNew Logon:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1201\r\n\tAccount Name:\t\takumar\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tWKS-110\r\n\tSource Network Address:\t10.0.6.40\r\n\tSource Port:\t\t0\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tKerberos\r\n\tAuthentication Package:\tKerberos"
+    },
+    {
+        "TimeCreated": "2026-10-22T07:10:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t57493\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:10:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:05:00Z",
+        "Id": 4776,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "The computer attempted to validate the credentials for an account.\r\n\r\nAuthentication Package:\tMICROSOFT_AUTHENTICATION_PACKAGE_V1_0\r\nLogon Account:\tjsmith\r\nSource Workstation:\tSERVER01\r\nError Code:\t0xC000006A"
+    },
+    {
+        "TimeCreated": "2026-10-22T07:05:00Z",
+        "Id": 4771,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "DC01.contoso.com",
+        "Message": "Kerberos pre-authentication failed.\r\n\r\nAccount Information:\r\n\tSecurity ID:\t\tS-1-5-21-1004336348-1177238915-682003330-1104\r\n\tAccount Name:\t\tjsmith\r\n\r\nService Information:\r\n\tService Name:\t\tkrbtgt/CONTOSO\r\n\r\nNetwork Information:\r\n\tClient Address:\t\t::ffff:10.0.4.15\r\n\tClient Port:\t\t57470\r\n\r\nAdditional Information:\r\n\tTicket Options:\t\t0x40810010\r\n\tFailure Code:\t\t0x18\r\n\tPre-Authentication Type:\t2\r\n\r\nCertificate Information:\r\n\tCertificate Issuer Name:\t\t\r\n\tCertificate Serial Number:\t\r\n\tCertificate Thumbprint:\t\t\r\n\r\nCertificate information is only provided if a certificate was used for pre-authentication.\r\n\r\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+    },
+    {
+        "TimeCreated": "2026-10-22T07:05:00Z",
+        "Id": 4625,
+        "ProviderName": "Microsoft-Windows-Security-Auditing",
+        "LogName": "Security",
+        "MachineName": "SERVER01.contoso.com",
+        "Message": "An account failed to log on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSERVER01$\r\n\tAccount Domain:\t\tCONTOSO\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Type:\t\t\t4\r\n\r\nAccount For Which Logon Failed:\r\n\tSecurity ID:\t\tNULL SID\r\n\tAccount Name:\t\tjsmith\r\n\tAccount Domain:\t\tCONTOSO\r\n\r\nFailure Information:\r\n\tFailure Reason:\t\tUnknown user name or bad password.\r\n\tStatus:\t\t\t0xC000006D\r\n\tSub Status:\t\t0xC000006A\r\n\r\nProcess Information:\r\n\tCaller Process ID:\t0x4f8\r\n\tCaller Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\tSERVER01\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon request fails. It is generated on the computer where access was attempted."
+    }
+]

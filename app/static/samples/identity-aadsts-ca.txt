@@ -1,0 +1,82 @@
+{
+  "id": "5d1c2f0a-7b3e-4c9a-9e1f-0a1b2c3d4e5f",
+  "createdDateTime": "2026-10-21T14:32:07Z",
+  "userDisplayName": "Megan Bowen",
+  "userPrincipalName": "meganb@contoso.com",
+  "userId": "0b6a8f3e-1c2d-4e5f-8a9b-1c2d3e4f5a6b",
+  "appId": "00000002-0000-0ff1-ce00-000000000000",
+  "appDisplayName": "Office 365 Exchange Online",
+  "ipAddress": "198.51.100.24",
+  "clientAppUsed": "Browser",
+  "correlationId": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+  "conditionalAccessStatus": "failure",
+  "isInteractive": true,
+  "riskLevelDuringSignIn": "none",
+  "riskState": "none",
+  "resourceDisplayName": "Office 365 Exchange Online",
+  "resourceTenantId": "11111111-2222-3333-4444-555555555555",
+  "homeTenantId": "11111111-2222-3333-4444-555555555555",
+  "authenticationRequirement": "multiFactorAuthentication",
+  "userType": "member",
+  "status": {
+    "errorCode": 53000,
+    "failureReason": "Device is not in required device state: compliant. Conditional Access policy requires a compliant device, and the device is not compliant. The user must enroll their device with an approved MDM provider like Intune.",
+    "additionalDetails": "MFA requirement satisfied by claim in the token"
+  },
+  "deviceDetail": {
+    "deviceId": "9f8e7d6c-5b4a-4321-9876-fedcba987654",
+    "displayName": "CONTOSO-LT042",
+    "operatingSystem": "Windows10",
+    "browser": "Edge 131.0.0",
+    "isCompliant": false,
+    "isManaged": true,
+    "trustType": "Azure AD joined"
+  },
+  "location": {
+    "city": "Redmond",
+    "state": "Washington",
+    "countryOrRegion": "US"
+  },
+  "mfaDetail": {
+    "authMethod": "Mobile app notification",
+    "authDetail": null
+  },
+  "appliedConditionalAccessPolicies": [
+    {
+      "id": "1",
+      "displayName": "Require MFA for all users",
+      "enforcedGrantControls": [
+        "Mfa"
+      ],
+      "enforcedSessionControls": [],
+      "result": "success"
+    },
+    {
+      "id": "2",
+      "displayName": "Require compliant device",
+      "enforcedGrantControls": [
+        "RequireCompliantDevice"
+      ],
+      "enforcedSessionControls": [],
+      "result": "failure"
+    },
+    {
+      "id": "3",
+      "displayName": "Block legacy authentication",
+      "enforcedGrantControls": [
+        "Block"
+      ],
+      "enforcedSessionControls": [],
+      "result": "notApplied"
+    },
+    {
+      "id": "4",
+      "displayName": "Block sign-ins outside US (report-only)",
+      "enforcedGrantControls": [
+        "Block"
+      ],
+      "enforcedSessionControls": [],
+      "result": "reportOnlyNotApplied"
+    }
+  ]
+}

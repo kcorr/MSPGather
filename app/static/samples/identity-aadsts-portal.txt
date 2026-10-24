@@ -1,0 +1,23 @@
+Date	10/21/2026, 2:32:07 PM
+Request ID	5d1c2f0a-7b3e-4c9a-9e1f-0a1b2c3d4e5f
+Correlation ID	a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d
+Authentication requirement	Single-factor authentication
+Status	Failure
+Continuous access evaluation	No
+Sign-in error code	50126
+Failure reason	Error validating credentials due to invalid username or password.
+Additional Details	The user didn't enter the right credentials. It's expected to see some number of these errors in your logs due to users making mistakes.
+User	Alex Wilber
+Username	alexw@contoso.com
+User ID	3f2e1d0c-9b8a-4766-8554-433221100fed
+User type	Member
+Application	Office 365 Exchange Online
+Application ID	00000002-0000-0ff1-ce00-000000000000
+Resource	Office 365 Exchange Online
+Client app	Exchange ActiveSync
+IP address	192.0.2.45
+Location	Lyon, Auvergne-Rhone-Alpes, FR
+
+Policy Name	Grant Controls	Session Controls	Result
+Require MFA for all users	Require multifactor authentication		Not Applied
+Block legacy authentication	Block access		Not Applied

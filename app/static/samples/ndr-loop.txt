@@ -1,0 +1,28 @@
+Delivery has failed to these recipients or groups:
+
+jsmith@contoso.com
+Your message couldn't be delivered. A problem occurred while delivering your message to this email address. Try sending your message again. If the problem continues, please contact your email admin.
+
+Diagnostic information for administrators:
+
+Generating server: BN8PR04MB5550.namprd04.prod.outlook.com
+
+jsmith@contoso.com
+Remote Server returned '554 5.4.14 Hop count exceeded - possible mail loop ATTR34 [DM6PR04MB7001.namprd04.prod.outlook.com 2026-10-21T14:07:11.000Z 08DCF1A2B3C4]'
+
+Original message headers:
+
+Received: from us-smtp-inbound-1.mimecast.com (205.139.110.60) by
+ DM6PR04MB7001.mail.protection.outlook.com (10.167.8.70) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8100.12; Wed, 21 Oct 2026 14:06:40 +0000
+Received: from BN8PR04MB5550.namprd04.prod.outlook.com (40.107.220.88) by
+ us-smtp-inbound-1.mimecast.com with ESMTPS id mc-77aa11-2;
+ Wed, 21 Oct 2026 14:06:21 +0000
+Received: from us-smtp-inbound-1.mimecast.com (205.139.110.60) by
+ BN8PR04MB5550.mail.protection.outlook.com (10.167.8.71) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8100.12; Wed, 21 Oct 2026 14:06:05 +0000
+From: billing@fabrikam.com
+To: jsmith@contoso.com
+Subject: Invoice

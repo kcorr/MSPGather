@@ -1,0 +1,10 @@
+# Development override: live code from ./app with auto-reload.
+#   docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+services:
+  mspgather:
+    volumes:
+      - ./app:/srv/app:ro
+    environment:
+      # Bind mounts from Windows don't deliver file events; poll instead.
+      - WATCHFILES_FORCE_POLLING=true
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080", "--reload", "--reload-dir", "/srv/app"]

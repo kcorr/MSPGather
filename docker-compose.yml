@@ -1,0 +1,32 @@
+services:
+  mspgather:
+    image: ghcr.io/kcorr/mspgather:latest
+    build: .
+    container_name: mspgather
+    restart: unless-stopped
+    ports:
+      # Localhost only by default. To share with your team, change to "8080:8080"
+      # and put HTTPS in front (reverse proxy). Sign-in with MFA is on by default.
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - mspgather-data:/data      # users, sessions, audit log (SQLite)
+    environment:
+      # First run: an admin setup token is printed in `docker logs mspgather`.
+      # Or bootstrap the first admin here (change the password at first sign-in):
+      # - MSPGATHER_ADMIN_USER=admin
+      # - MSPGATHER_ADMIN_PASSWORD=change-me-to-something-long
+      # - MSPGATHER_REQUIRE_MFA=true
+      # - MSPGATHER_ALLOW_PRIVATE_TARGETS=true   # false = refuse RFC1918 targets in network tools
+      # - FORWARDED_ALLOW_IPS=172.16.0.0/12      # trust X-Forwarded-* from your reverse proxy
+      - DEFAULT_RESOLVER=system
+      - SMTP_HELO=mspgather.diagnostics.local
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  mspgather-data:

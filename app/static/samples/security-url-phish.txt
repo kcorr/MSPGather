@@ -1,0 +1,20 @@
+From: Microsoft 365 <no-reply@m365-notify.example>
+To: Alex Wilber <alex.wilber@contoso.com>
+Subject: [Action required] Your mailbox password expires today
+
+Hi Alex,
+
+Your Microsoft 365 password for alex.wilber@contoso.com expires in 2 hours.
+To keep using Outlook and Teams, confirm your current password here:
+
+  https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Flogin.micros0ft-verify.example%2Fcommon%2Foauth2%2Fauthorize%3Fclient_id%3D11111111-2222-3333-4444-555555555555%26response_type%3Dcode%23YWxleC53aWxiZXJAY29udG9zby5jb20%3D&data=05%7C02%7Calex.wilber%40contoso.com%7C9f1c%7C0a1b2c3d4e5f40718293a4b5c6d7e8f9%7C1%7C0&sdata=Zm9vYmFy%3D&reserved=0
+
+You also have 1 new shared document waiting from Fabrikam Accounts:
+
+  https://urldefense.com/v3/__https://fabrikam-my.sharepoint.com/:b:/g/personal/accounts_fabrikam_com/EQx1RmVhbA?e=4dXb2k*page=1__;Iw!!CQl3mcHX2A!AbCdEfGhIjKlMnOp$
+
+Unpaid invoice copy (backup link): http://203.0.113.45/invoice/view.php?id=88213
+
+Thanks,
+Microsoft 365 Team
+Privacy Statement: https://www.contoso.com/privacy

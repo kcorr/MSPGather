@@ -1,0 +1,600 @@
+{
+ "value": [
+  {
+   "createdDateTime": "2026-10-22T03:10:37Z",
+   "userPrincipalName": "adelev@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000000",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:11:14Z",
+   "userPrincipalName": "alexw@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000001",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:11:51Z",
+   "userPrincipalName": "diegos@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000002",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:12:28Z",
+   "userPrincipalName": "gradya@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000003",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:13:05Z",
+   "userPrincipalName": "isaiahl@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000004",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:13:42Z",
+   "userPrincipalName": "johannal@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000005",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:14:19Z",
+   "userPrincipalName": "jonis@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000006",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:14:56Z",
+   "userPrincipalName": "leeg@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000007",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:15:33Z",
+   "userPrincipalName": "lidiah@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000008",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:16:10Z",
+   "userPrincipalName": "lynner@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000009",
+   "status": {
+    "errorCode": 50053,
+    "failureReason": "Account is locked because user tried to sign in too many times with an incorrect user ID or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:16:47Z",
+   "userPrincipalName": "miriamg@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000010",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:17:24Z",
+   "userPrincipalName": "nestorw@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000011",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:18:01Z",
+   "userPrincipalName": "adelev@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000012",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:18:38Z",
+   "userPrincipalName": "alexw@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000013",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:19:15Z",
+   "userPrincipalName": "diegos@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000014",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:19:52Z",
+   "userPrincipalName": "gradya@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000015",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:20:29Z",
+   "userPrincipalName": "isaiahl@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000016",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:21:06Z",
+   "userPrincipalName": "johannal@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000017",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:21:43Z",
+   "userPrincipalName": "jonis@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000018",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:22:20Z",
+   "userPrincipalName": "leeg@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000019",
+   "status": {
+    "errorCode": 50053,
+    "failureReason": "Account is locked because user tried to sign in too many times with an incorrect user ID or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:22:57Z",
+   "userPrincipalName": "lidiah@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000020",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:23:34Z",
+   "userPrincipalName": "lynner@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000021",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:24:11Z",
+   "userPrincipalName": "miriamg@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000022",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:24:48Z",
+   "userPrincipalName": "nestorw@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000023",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:25:25Z",
+   "userPrincipalName": "adelev@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000024",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:26:02Z",
+   "userPrincipalName": "alexw@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000025",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:26:39Z",
+   "userPrincipalName": "diegos@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000026",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:27:16Z",
+   "userPrincipalName": "gradya@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000027",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:27:53Z",
+   "userPrincipalName": "isaiahl@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000028",
+   "status": {
+    "errorCode": 50126,
+    "failureReason": "Error validating credentials due to invalid username or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T03:28:30Z",
+   "userPrincipalName": "johannal@contoso.com",
+   "appDisplayName": "Office 365 Exchange Online",
+   "clientAppUsed": "Authenticated SMTP",
+   "ipAddress": "203.0.113.77",
+   "location": {
+    "city": "",
+    "state": "",
+    "countryOrRegion": "NL"
+   },
+   "correlationId": "c0ffee00-0000-4000-8000-000000000029",
+   "status": {
+    "errorCode": 50053,
+    "failureReason": "Account is locked because user tried to sign in too many times with an incorrect user ID or password."
+   },
+   "appliedConditionalAccessPolicies": [],
+   "authenticationRequirement": "singleFactorAuthentication"
+  },
+  {
+   "createdDateTime": "2026-10-22T08:01:12Z",
+   "userPrincipalName": "alexw@contoso.com",
+   "appDisplayName": "Microsoft Teams",
+   "clientAppUsed": "Mobile Apps and Desktop clients",
+   "ipAddress": "198.51.100.10",
+   "location": {
+    "city": "Seattle",
+    "state": "Washington",
+    "countryOrRegion": "US"
+   },
+   "correlationId": "d00d0000-0000-4000-8000-000000000001",
+   "status": {
+    "errorCode": 0
+   },
+   "authenticationRequirement": "multiFactorAuthentication",
+   "appliedConditionalAccessPolicies": [
+    {
+     "displayName": "Require MFA for all users",
+     "enforcedGrantControls": [
+      "Mfa"
+     ],
+     "result": "success"
+    }
+   ]
+  }
+ ]
+}
