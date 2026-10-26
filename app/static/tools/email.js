@@ -330,7 +330,7 @@ function renderDomainResult(d) {
       ["max_age", sts.policy ? sts.policy.max_age : null],
       ["TLS-RPT", d.tls_rpt.record ? el("span", { class: "mono" }, d.tls_rpt.record) : "not configured"],
       ["BIMI", d.bimi.record ? el("span", { class: "mono" }, d.bimi.record) : "not configured"],
-    ])),
+    ]), { extra: link("mtasts", { d: d.domain }, sts.record ? "Review MTA-STS →" : "Build MTA-STS →") }),
     card("Microsoft 365 / DNS hosting", kv([
       ["Entra tenant ID", m.tenant_id ? el("span", { class: "mono" }, m.tenant_id) : "not found"],
       ["Namespace", m.namespace_type], ["Federation brand", m.federation_brand], ["Federated auth URL", m.auth_url],
@@ -338,6 +338,11 @@ function renderDomainResult(d) {
       ["DNS hosting", d.ns.dns_host], ["Name servers", d.ns.hosts.join(", ")],
       ["Lookup error", m.error],
     ]))));
+  frag.append(el("div", { class: "section-title" }, "Fix it"), el("div", { class: "tool-grid" },
+    [["harden", "Every public-facing fix for this domain, prioritised."], ["spfbuild", "Correct or extend the SPF record."],
+      ["dmarcbuild", "Next DMARC rollout stage."], ["mtasts", "MTA-STS policy and TLS-RPT records."],
+      d.mx.null_mx || !d.mx.records.length ? ["parked", "Lock down a domain that sends no mail."] : null]
+      .filter(Boolean).map(([id, blurb]) => (toolById(id) ? toolCard(toolById(id), { params: { d: d.domain }, blurb }) : null))));
   return frag;
 }
 
@@ -550,10 +555,11 @@ function renderBlacklistTool(main, params) {
         { title: "Fix the cause before requesting removal", detail: "Reset compromised accounts, stop the spam source and check outbound mail logs. Lists re-add IPs that keep sending spam." },
         { title: "Request delisting", detail: "Use each list's removal page. Many lists (SpamCop, PSBL) expire listings automatically within 24–48h once the spam stops; UCEPROTECT Level 2 lists whole provider ranges and is usually ignored by major mail providers." },
       ]));
-      if (refused) frag.append(el("div", { class: "notice" }, "Some lists refused the query because it came through a public DNS resolver. Results from those lists are unknown, not clean. Run MSPGather on a network with its own recursive resolver, or check the list's website."));
+      if (d.notes && d.notes.length) d.notes.forEach((n) => frag.append(el("div", { class: "notice" }, n)));
+      else if (refused) frag.append(el("div", { class: "notice" }, "Some lists refused the query because it came through a public DNS resolver. Results from those lists are unknown, not clean. Run MSPGather on a network with its own recursive resolver, or check the list's website."));
       d.targets.forEach((t) => {
         const rd = t.rdns;
-        frag.append(card([el("span", { class: "mono" }, t.subject), " ", t.listed ? badge("critical", `${t.listed} listed`) : badge("ok", "clean"), t.policy ? badge("info", `${t.policy} policy`) : null, t.errors ? badge("muted", `${t.errors} unknown`) : null, el("span", { class: "sub" }, ` · ${t.role}`),
+        frag.append(card([el("span", { class: "mono" }, t.subject), " ", t.listed ? badge("critical", `${t.listed} listed`) : t.errors >= t.checked ? badge("muted", "unknown") : badge("ok", "clean"), t.policy ? badge("info", `${t.policy} policy`) : null, t.errors ? badge("muted", `${t.errors} unknown`) : null, el("span", { class: "sub" }, ` · ${t.role}`),
           rd ? el("span", { class: "sub" }, ` · PTR ${rd.ptr[0] || "none"}${rd.ptr.length ? (rd.forward_confirmed ? " (FCrDNS ok)" : " (does not resolve back)") : ""}`) : null],
           table(["List", "Status", "Details"], [...t.results].sort((a, b) => (b.listed - a.listed) || (b.policy - a.policy) || (!!b.error - !!a.error)).map((r) => [
             el("div", {}, el("a", { href: r.info, target: "_blank", rel: "noopener noreferrer" }, r.list), el("div", { class: "sub mono" }, r.zone)),

@@ -6,7 +6,10 @@ Nothing here scans or logs in to the prospect's systems: host names are only
 resolved in DNS, and the website is fetched once like any visitor would."""
 from __future__ import annotations
 
+import os
 import re
+import threading
+import time
 import uuid
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -15,13 +18,14 @@ import httpx
 from fastapi import APIRouter
 
 from ..core.dns_utils import is_private_ip, make_resolver, normalize_domain, registered_domain, resolve, txt
+from ..core import workspace
 from ..core.http import run
 from ..core.providers import provider_for
 from .domain import (check_autodiscover, check_bimi, check_dkim, check_dmarc, check_mta_sts, check_mx, check_ns,
                      check_tlsrpt)
 from .identity import tenant_lookup
 from .ipinfo import asn_lookup
-from .netdiag import _detect_cdn, _safe_get, domain_registration, http_inspect
+from .netdiag import _NO_CLIENT_LOCK_TLDS, _detect_cdn, _safe_get, domain_registration, http_inspect
 from .spf import analyze_spf
 
 router = APIRouter()
@@ -367,7 +371,8 @@ def _caa_soa(res, domain: str) -> dict:
     soa, _ = resolve(res, domain, "SOA")
     issuers = sorted({r.value.decode() if isinstance(r.value, bytes) else str(r.value) for r in caa if r.tag in (b"issue", b"issuewild", "issue", "issuewild")})
     s = soa[0] if soa else None
-    return {"caa": [i.split(";")[0] for i in issuers if i],
+    # 'issue ";"' means no CA may issue at all: keep it rather than reporting "no CAA".
+    return {"caa": sorted({(i.split(";")[0].strip() or "none (no CA may issue)") for i in issuers}),
             "soa": {"primary_ns": s.mname.to_text(omit_final_dot=True), "contact": s.rname.to_text(omit_final_dot=True).replace(".", "@", 1),
                     "serial": s.serial} if s else None}
 
@@ -420,12 +425,29 @@ def _website(domain: str) -> dict:
     return out
 
 
-def _capped_json(url: str, params: dict, timeout: float, cap: int = 20_000_000):
+# crt.sh asks for no more than 5 requests a minute per client; stay under it and fall back to CertSpotter.
+CRTSH_PER_MINUTE = 4
+_crtsh_calls: list[float] = []
+_crtsh_lock = threading.Lock()
+CERTSPOTTER_KEY = os.environ.get("CERTSPOTTER_API_KEY", "").strip()
+
+
+def _crtsh_slot() -> bool:
+    now = time.monotonic()
+    with _crtsh_lock:
+        _crtsh_calls[:] = [t for t in _crtsh_calls if now - t < 60]
+        if len(_crtsh_calls) >= CRTSH_PER_MINUTE:
+            return False
+        _crtsh_calls.append(now)
+        return True
+
+
+def _capped_json(url: str, params: dict, timeout: float, cap: int = 20_000_000, headers: dict | None = None):
     """GET JSON from a fixed public API with a size and time cap (large domains return huge CT results)."""
     import json
-    import time
     from ..core.outbound import read_capped
-    with httpx.Client(timeout=timeout, trust_env=False) as c, c.stream("GET", url, params=params) as r:
+    hdrs = {"user-agent": "MSPGather (+https://github.com/kcorr/MSPGather)", **(headers or {})}
+    with httpx.Client(timeout=timeout, trust_env=False, headers=hdrs) as c, c.stream("GET", url, params=params) as r:
         r.raise_for_status()
         body, truncated = read_capped(r, cap, time.monotonic() + timeout * 2)
     if truncated:
@@ -438,20 +460,24 @@ def _ct_names(domain: str) -> dict:
     crt.sh first (most complete, often slow), CertSpotter as a fallback."""
     raw: list[str] = []
     source, errors = None, []
-    try:
-        for row in _capped_json("https://crt.sh/", {"q": f"%.{domain}", "output": "json"}, 20)[:5000]:
-            raw.extend(str(row.get("name_value", "")).splitlines())
-        source = "crt.sh"
-    except (httpx.HTTPError, ValueError) as exc:
-        errors.append(f"crt.sh: {type(exc).__name__}")
+    if not _crtsh_slot():
+        errors.append("crt.sh: skipped to respect its rate limit")
+    else:
+        try:
+            for row in _capped_json("https://crt.sh/", {"q": f"%.{domain}", "output": "json"}, 20)[:5000]:
+                raw.extend(str(row.get("name_value", "")).splitlines())
+            source = "crt.sh"
+        except (httpx.HTTPError, ValueError) as exc:
+            errors.append(f"crt.sh: {'rate limited' if isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code == 429 else type(exc).__name__}")
     if source is None:
         try:
             for row in _capped_json("https://api.certspotter.com/v1/issuances",
-                                    {"domain": domain, "include_subdomains": "true", "expand": "dns_names"}, 15):
+                                    {"domain": domain, "include_subdomains": "true", "expand": "dns_names"}, 15,
+                                    headers={"authorization": f"Bearer {CERTSPOTTER_KEY}"} if CERTSPOTTER_KEY else None):
                 raw.extend(row.get("dns_names", []))
             source = "CertSpotter"
         except (httpx.HTTPError, ValueError) as exc:
-            errors.append(f"CertSpotter: {type(exc).__name__}")
+            errors.append(f"CertSpotter: {'rate limited (set CERTSPOTTER_API_KEY for more)' if isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code == 429 else type(exc).__name__}")
     if source is None:
         return {"error": "Certificate transparency sources didn't answer (" + ", ".join(errors) + "). They are often slow; try again later.", "names": []}
     names = set()
@@ -693,7 +719,7 @@ def _talking_points(ctx: dict) -> list[dict]:
     registrar = ((reg or {}).get("registrar") or {}).get("name")
     add("question", "Domain", f"Who owns the {registrar or 'registrar'} account for {d}?",
         "Domain and DNS accounts are often in an ex-employee's or old provider's name. Make sure the company owns them and they have MFA.")
-    no_client_locks = d.rsplit(".", 1)[-1] in ("uk", "de", "eu", "nl", "au", "nz", "ch", "at", "be", "fr", "se", "no", "dk", "fi", "jp")
+    no_client_locks = d.rsplit(".", 1)[-1] in _NO_CLIENT_LOCK_TLDS
     if not no_client_locks and not any(s.get("code") in ("clientTransferProhibited", "serverTransferProhibited") for s in (reg or {}).get("statuses", []))             and (reg or {}).get("registered") and (reg or {}).get("statuses"):
         add("risk", "Domain", "No transfer lock on the domain", "Turn on the registrar's transfer lock to prevent hijacking.")
     order = {"risk": 0, "opportunity": 1, "question": 2}
@@ -855,4 +881,6 @@ def _safe(fn, *args):
 
 @router.get("/api/discover/{domain:path}")
 def discover_route(domain: str, ct: bool = False):
-    return run(discover, domain, ct)
+    result = run(discover, domain, ct)
+    result["result_id"] = workspace.remember("discovery", result["domain"], result)
+    return result

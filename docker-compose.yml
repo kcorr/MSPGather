@@ -18,6 +18,10 @@ services:
       # - MSPGATHER_REQUIRE_MFA=true
       # - MSPGATHER_ALLOW_PRIVATE_TARGETS=true   # false = refuse RFC1918 targets in network tools
       # - FORWARDED_ALLOW_IPS=172.16.0.0/12      # trust X-Forwarded-* from your reverse proxy
+      # - MSPGATHER_ORG_NAME=Contoso IT Services  # "prepared by" on client snapshots (or set it in the app)
+      # - SPAMHAUS_DQS_KEY=<key>                   # licensed Spamhaus queries for commercial use
+      # - CERTSPOTTER_API_KEY=<key>                # more certificate-log searches in Prospect Discovery
+      # - MSPGATHER_ASSESSMENT_RETENTION_DAYS=365  # how long saved reports are kept
       - DEFAULT_RESOLVER=system
       - SMTP_HELO=mspgather.diagnostics.local
     read_only: true

@@ -27,6 +27,8 @@ MSPGather is designed to be safe to expose to a team network, and survivable on 
   URL fetchers also refuse private addresses on every redirect hop. Set
   `MSPGATHER_ALLOW_PRIVATE_TARGETS=false` to refuse RFC 1918 targets everywhere.
 - **Links can't trigger scans**: a tool opened from an external link shows its input and waits for the engineer to press Run.
+- **Active tests need authorization**: SSL/TLS Checker, Port Check and SMTP Test are refused by the server (HTTP 428) unless the request carries the confirmation the engineer gives on the tool page; each run is recorded in the audit log with it. The confirmation is a custom header, so a cross-site page or link can't supply it.
+- **Saved reports**: only server-generated results can be saved (by a short-lived result id), they're shared with signed-in users, deletable by their author or an admin, and expire after `MSPGATHER_ASSESSMENT_RETENTION_DAYS`.
 - **Copy-paste commands** only include values that pass strict validation (emails, host names, IPs, URLs), single-quoted for PowerShell.
 - **Audit log** of sign-ins, account changes and tool usage (targets only, never pasted content).
 - **Container**: non-root user, read-only application code, data only in `/data`; the provided

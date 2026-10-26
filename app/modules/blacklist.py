@@ -1,7 +1,20 @@
-"""DNS blocklist (DNSBL / URIBL) checks for IPs and domains."""
+"""DNS blocklist (DNSBL / URIBL) checks for IPs and domains.
+
+Every list is first asked about its own test entry (RFC 5782: 127.0.0.2, or the list's
+test domain). Lists that refuse the resolver MSPGather uses often answer "not listed"
+for everything (Spamhaus through Google DNS, for example), so a list whose test entry
+doesn't come back listed is reported as "couldn't check", never as clean.
+
+Spamhaus' public mirrors are free only for low-volume, non-commercial use and refuse
+public resolvers. Set SPAMHAUS_DQS_KEY to query through the Data Query Service instead."""
 from __future__ import annotations
 
 import ipaddress
+import logging
+import os
+import re
+import threading
+import time
 from concurrent.futures import ThreadPoolExecutor
 
 from ..core.dns_utils import addresses, fcrdns, is_ip, make_resolver, normalize_domain, resolve, txt
@@ -14,20 +27,29 @@ IP_LISTS = [
     {"zone": "bl.mailspike.net", "name": "Mailspike", "info": "https://mailspike.org/"},
     {"zone": "dnsbl-1.uceprotect.net", "name": "UCEPROTECT L1", "info": "https://www.uceprotect.net/en/rblcheck.php"},
     {"zone": "dnsbl-2.uceprotect.net", "name": "UCEPROTECT L2 (whole range)", "info": "https://www.uceprotect.net/en/rblcheck.php", "range": True},
-    {"zone": "ix.dnsbl.manitu.net", "name": "NiX Spam", "info": "https://www.nixspam.net/"},
     {"zone": "dnsbl.dronebl.org", "name": "DroneBL", "info": "https://dronebl.org/lookup"},
     {"zone": "bl.blocklist.de", "name": "blocklist.de", "info": "https://www.blocklist.de/en/search.html"},
     {"zone": "rbl.interserver.net", "name": "InterServer", "info": "https://rbl.interserver.net/"},
     {"zone": "dnsbl.spfbl.net", "name": "SPFBL", "info": "https://spfbl.net/en/dnsbl/"},
-    {"zone": "db.wpbl.info", "name": "WPBL", "info": "http://www.wpbl.info/"},
     {"zone": "truncate.gbudb.net", "name": "GBUdb Truncate", "info": "https://www.gbudb.com/"},
     {"zone": "all.s5h.net", "name": "s5h.net", "info": "https://www.usenix.org.uk/content/rbl.html"},
 ]
 DOMAIN_LISTS = [
-    {"zone": "dbl.spamhaus.org", "name": "Spamhaus DBL", "info": "https://check.spamhaus.org/"},
-    {"zone": "multi.surbl.org", "name": "SURBL", "info": "https://surbl.org/surbl-analysis"},
-    {"zone": "multi.uribl.com", "name": "URIBL", "info": "https://admin.uribl.com/"},
+    {"zone": "dbl.spamhaus.org", "name": "Spamhaus DBL", "info": "https://check.spamhaus.org/", "test": "dbltest.com"},
+    {"zone": "multi.surbl.org", "name": "SURBL", "info": "https://surbl.org/surbl-analysis", "test": "test.surbl.org"},
+    {"zone": "multi.uribl.com", "name": "URIBL", "info": "https://admin.uribl.com/", "test": "test.uribl.com"},
 ]
+# Removed as defunct: ix.dnsbl.manitu.net (NiX Spam, closed January 2025), db.wpbl.info (WPBL, closed 2023).
+
+log = logging.getLogger("mspgather.blacklist")
+DQS_KEY = os.environ.get("SPAMHAUS_DQS_KEY", "").strip()
+if DQS_KEY and not re.fullmatch(r"[A-Za-z0-9]{16,64}", DQS_KEY):
+    log.warning("SPAMHAUS_DQS_KEY doesn't look like a Spamhaus DQS key; ignoring it.")
+    DQS_KEY = ""
+_DQS_ZONES = {"zen.spamhaus.org": "zen.dq.spamhaus.net", "dbl.spamhaus.org": "dbl.dq.spamhaus.net"}
+CANARY_TTL = 600
+_canary_cache: dict[tuple[str, str], tuple[float, str | None]] = {}
+_canary_lock = threading.Lock()
 
 SPAMHAUS_ZEN = {
     "127.0.0.2": "SBL: Spamhaus verified spam source", "127.0.0.3": "SBL CSS: snowshoe / low-reputation sender",
@@ -61,10 +83,67 @@ def _reverse_ip(ip: str) -> str:
     return ".".join(reversed(addr.exploded.replace(":", "")))
 
 
+def _zone(lst: dict) -> tuple[str, str]:
+    """(zone to query, zone to show). A DQS key is part of the query name, so it's never shown."""
+    dq = _DQS_ZONES.get(lst["zone"])
+    if DQS_KEY and dq:
+        return f"{DQS_KEY}.{dq}", f"{dq} (DQS)"
+    return lst["zone"], lst["zone"]
+
+
+def _refusal(codes: list[str], lst: dict, is_domain: bool) -> str | None:
+    refused = [REFUSED[c] for c in codes if c in REFUSED]
+    if refused:
+        return refused[0]
+    # URIBL / SURBL answer 127.0.0.1 when they block the querying resolver.
+    if is_domain and lst["zone"] in ("multi.uribl.com", "multi.surbl.org") and codes == ["127.0.0.1"]:
+        return "Query refused (public resolver or rate limit)"
+    return None
+
+
+def _canary(res, resolver_key: str, lst: dict, is_domain: bool) -> str | None:
+    """None if the list answers its own test entry through this resolver, otherwise why its
+    answers can't be trusted. Cached per resolver and list for a few minutes."""
+    qzone, _ = _zone(lst)
+    ck = (resolver_key, qzone)
+    now = time.monotonic()
+    with _canary_lock:
+        hit = _canary_cache.get(ck)
+        if hit and hit[0] > now:
+            return hit[1]
+    test = lst.get("test") or "2.0.0.127"
+    rdata, meta = resolve(res, f"{test}.{qzone}", "A", fallback=False)
+    codes = [r.address for r in rdata]
+    transient = False
+    if meta["status"] in ("timeout", "error"):
+        why, transient = f"The list didn't answer through the {resolver_key} resolver ({meta['status']}).", True
+    elif meta["status"] == "servfail":
+        why = f"Query refused or failing: the list returns SERVFAIL through the {resolver_key} resolver."
+    elif _refusal(codes, lst, is_domain):
+        why = _refusal(codes, lst, is_domain)
+    elif not codes:
+        why = (f"Query refused or filtered: the list's own test entry didn't come back listed through the {resolver_key} resolver, "
+               "so a 'not listed' answer can't be trusted. Public resolvers (Google, Cloudflare, Quad9) are often refused.")
+    else:
+        why = None
+    if why and lst["zone"] in _DQS_ZONES and not DQS_KEY and "DQS" not in why:
+        why += (" Spamhaus needs your own recursive resolver or a Data Query Service key (SPAMHAUS_DQS_KEY); "
+                "its free tiers are for non-commercial use.")
+    with _canary_lock:
+        _canary_cache[ck] = (now + (60 if transient else CANARY_TTL), why)
+    return why
+
+
+def _unusable(lst: dict, why: str) -> dict:
+    return {"list": lst["name"], "zone": _zone(lst)[1], "info": lst["info"], "listed": False, "policy": False,
+            "codes": [], "meaning": None, "reason": None, "error": why, "unusable": True}
+
+
 def _query(res, lst: dict, key: str, is_domain: bool) -> dict:
-    name = f"{key}.{lst['zone']}"
+    qzone, shown = _zone(lst)
+    name = f"{key}.{qzone}"
     rdata, meta = resolve(res, name, "A", fallback=False)
-    out = {"list": lst["name"], "zone": lst["zone"], "info": lst["info"], "listed": False, "policy": False, "codes": [],
+    out = {"list": lst["name"], "zone": shown, "info": lst["info"], "listed": False, "policy": False, "codes": [],
            "meaning": None, "reason": None, "error": None}
     if meta["status"] in ("timeout", "servfail", "error"):
         out["error"] = meta["error"] or meta["status"]
@@ -72,10 +151,9 @@ def _query(res, lst: dict, key: str, is_domain: bool) -> dict:
     codes = [r.address for r in rdata]
     if not codes:
         return out
-    refused = [REFUSED[c] for c in codes if c in REFUSED]
-    # URIBL / SURBL answer 127.0.0.1 when they block the querying resolver.
-    if refused or (is_domain and lst["zone"] in ("multi.uribl.com", "multi.surbl.org") and codes == ["127.0.0.1"]):
-        out["error"] = refused[0] if refused else "Query refused (public resolver or rate limit)"
+    refusal = _refusal(codes, lst, is_domain)
+    if refusal:
+        out["error"] = refusal
         return out
     out["codes"] = codes
     if set(codes) <= POLICY_CODES.get(lst["zone"], set()):
@@ -119,19 +197,26 @@ def check_target(target: str, resolver_name: str | None = None) -> dict:
                 roles[ip] = "Domain A record (web server, usually not a mail sender)"
         ips = ips[:6]
 
+    resolver_key = resolver_name or "system"
     with ThreadPoolExecutor(max_workers=24) as pool:
+        # Which lists can be trusted through this resolver: each is asked about its own test entry.
+        wanted = ([(lst, True) for lst in DOMAIN_LISTS] if domain else []) + ([(lst, False) for lst in IP_LISTS] if ips else [])
+        futures = {lst["zone"]: pool.submit(_canary, res, resolver_key, lst, is_dom) for lst, is_dom in wanted}
+        canary = {zone: fut.result() for zone, fut in futures.items()}
         if domain:
             for lst in DOMAIN_LISTS:
-                jobs.append(("domain", domain, pool.submit(_query, res, lst, domain, True)))
+                why = canary.get(lst["zone"])
+                jobs.append(("domain", domain, None if why else pool.submit(_query, res, lst, domain, True), lst, why))
         for ip in ips:
             v6 = ipaddress.ip_address(ip).version == 6
             for lst in IP_LISTS:
                 if v6 and not lst.get("ipv6"):
                     continue
-                jobs.append(("ip", ip, pool.submit(_query, res, lst, _reverse_ip(ip), False)))
+                why = canary.get(lst["zone"])
+                jobs.append(("ip", ip, None if why else pool.submit(_query, res, lst, _reverse_ip(ip), False), lst, why))
         rdns = {ip: pool.submit(fcrdns, res, ip) for ip in ips}
-        for kind, subject, fut in jobs:
-            checks.append({"kind": kind, "subject": subject, **fut.result()})
+        for kind, subject, fut, lst, why in jobs:
+            checks.append({"kind": kind, "subject": subject, **(fut.result() if fut else _unusable(lst, why))})
         reverse = {ip: f.result() for ip, f in rdns.items()}
 
     targets = []
@@ -144,5 +229,14 @@ def check_target(target: str, resolver_name: str | None = None) -> dict:
             "errors": sum(1 for r in rows if r["error"]),
             "checked": len(rows), "rdns": reverse.get(subject), "results": rows,
         })
-    return {"input": target, "resolver": resolver_name or "system", "targets": targets,
+    skipped = sorted({c["list"] for c in checks if c.get("unusable")})
+    notes = []
+    if skipped:
+        notes.append(f"{len(skipped)} list{'s' if len(skipped) > 1 else ''} couldn't be used through the {resolver_key} resolver "
+                     f"({', '.join(skipped)}): their own test entries didn't answer correctly, so they're shown as unknown, not clean. "
+                     "Run MSPGather on a network with its own recursive resolver for complete results.")
+    if not DQS_KEY:
+        notes.append("Spamhaus is queried through its public mirrors, which are free only for low-volume, non-commercial use. "
+                     "For client work, set SPAMHAUS_DQS_KEY (Spamhaus Data Query Service).")
+    return {"input": target, "resolver": resolver_key, "targets": targets, "notes": notes, "dqs": bool(DQS_KEY),
             "listed_total": sum(t["listed"] for t in targets)}

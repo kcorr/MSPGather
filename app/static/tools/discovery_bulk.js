@@ -190,7 +190,8 @@ function bulkauditResult(state) {
   frag.append(verdict(s.sev, s.title, s.sub));
   frag.append(facts(s.facts));
   frag.append(card("Findings", findingsList(s.findings), { flush: true }));
-  frag.append(nextSteps(s.steps));
+  const steps = nextSteps(s.steps);
+  if (steps) frag.append(steps);
   frag.append(bulkauditTable(state));
   frag.append(el("p", { class: "hint" }, "Email grade uses Domain Discovery's scoring weights for DMARC, SPF, DKIM, inbound filtering, MTA-STS/TLS-RPT, DNSSEC and domain registration. " +
     "Website and remote-access checks are skipped in the bulk audit, so the percentage is recalculated over the email items only and can differ slightly from Domain Discovery. " +
@@ -228,8 +229,11 @@ function bulkauditSummary(rows, state) {
   let sev = "ok";
   rows.forEach((r) => (r.problems || []).forEach((p) => { if (p.severity === "critical") sev = "critical"; else if (p.severity === "warning" && sev === "ok") sev = "warning"; }));
   const doneAll = state.done >= state.total;
+  const minor = rows.reduce((k, r) => k + (r.problems || []).filter((p) => p.severity === "warning").length, 0);
+  // Nothing serious: the headline says healthy, so the banner shouldn't look like a warning.
+  if (!parts.length && sev === "warning") sev = "info";
   const title = parts.length ? parts.join("; ") + "."
-    : `All ${n} domain${n === 1 ? "" : "s"} look healthy: DMARC enforced, SPF valid, nothing expiring within 30 days.`;
+    : `All ${n} domain${n === 1 ? "" : "s"} pass the key checks: DMARC enforced, SPF valid, nothing expiring within 30 days${minor ? ` (${minor} smaller issue${minor === 1 ? "" : "s"} highlighted below)` : ""}.`;
   const sub = (doneAll ? "" : `Partial result: ${state.done} of ${state.total} audited so far. `) +
     (state.invalid.length ? `${state.invalid.length} invalid entr${state.invalid.length === 1 ? "y" : "ies"} skipped. ` : "") +
     "Click a column header to sort; problem cells are highlighted.";

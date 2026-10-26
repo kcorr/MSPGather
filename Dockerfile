@@ -5,7 +5,7 @@ FROM python:3.12-slim@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e
 ARG VERSION=dev
 ARG REVISION=unknown
 LABEL org.opencontainers.image.title="MSPGather" \
-      org.opencontainers.image.description="Self-hosted troubleshooting and discovery toolkit for MSP engineers" \
+      org.opencontainers.image.description="Self-hosted discovery, hardening and troubleshooting toolkit for MSP engineers" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.version="${VERSION}" \
       org.opencontainers.image.revision="${REVISION}"

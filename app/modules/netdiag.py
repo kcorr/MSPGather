@@ -1199,23 +1199,15 @@ EPP_STATUS: dict[str, tuple[str, str, str]] = {
     "serverrenewprohibited": ("warning", "serverRenewProhibited", "The registry is blocking renewal, for example during a dispute or legal hold, or as part of a registry lock. If it isn't lifted the domain can't be renewed."),
 }
 # ccTLD registries that don't use EPP client transfer locks (transfers use auth codes / registrar tags instead).
-_NO_CLIENT_LOCK_TLDS = {"uk", "de", "eu", "nl", "au"}
-_BOOTSTRAP: dict = {"tlds": None, "at": 0.0}
+_NO_CLIENT_LOCK_TLDS = {"uk", "de", "eu", "nl", "au", "nz", "ch", "at", "be", "fr", "se", "no", "dk", "fi", "jp"}
 _DOH_URLS = ("https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query")
 
 
 def _rdap_tlds() -> set[str] | None:
     """TLDs with an RDAP service, from IANA's bootstrap file (cached for a day)."""
-    if _BOOTSTRAP["tlds"] is not None and time.monotonic() - _BOOTSTRAP["at"] < 86400:
-        return _BOOTSTRAP["tlds"]
-    try:
-        r = httpx.get("https://data.iana.org/rdap/dns.json", timeout=8.0, headers={"user-agent": UA})
-        r.raise_for_status()
-        tlds = {t.lower() for svc in r.json().get("services", []) for t in svc[0]}
-        _BOOTSTRAP.update(tlds=tlds, at=time.monotonic())
-        return tlds
-    except (httpx.HTTPError, ValueError, KeyError, IndexError, TypeError):
-        return _BOOTSTRAP["tlds"]
+    from ..core import rdap
+    svc = rdap.services("dns")
+    return {str(t).lower() for entries, _ in svc for t in entries} if svc else None
 
 
 def _doh(name: str, rtype: str, cd: bool = False) -> dict:
@@ -1255,9 +1247,9 @@ def _dnssec_live(domain: str) -> dict:
 
 
 def _rdap_fetch(domain: str) -> tuple[int | None, dict | None, str | None, str | None]:
+    from ..core import rdap  # straight to the registry via IANA's bootstrap
     try:
-        r = httpx.get(f"https://rdap.org/domain/{domain}", timeout=10.0, follow_redirects=True,
-                      headers={"accept": "application/rdap+json, application/json", "user-agent": UA})
+        r = rdap.get("dns", domain, timeout=10.0)
     except httpx.HTTPError as exc:
         return None, None, None, f"RDAP lookup failed: {exc}"
     data = None

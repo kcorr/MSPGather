@@ -34,13 +34,13 @@ from fastapi import APIRouter, Query
 from pydantic import BaseModel, Field
 
 from ..core.dns_utils import addresses, is_ip, make_resolver, normalize_domain, registered_domain, resolve
+from ..core import rdap
 from ..core.http import run
 from .ipinfo import asn_lookup, ip_lookup
 from .smtp_test import _cert_info
 
 router = APIRouter()
 
-RDAP_DOMAIN = "https://rdap.org/domain/{domain}"
 HTTP_TIMEOUT = 8.0
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 MAX_URLS = 25
@@ -331,12 +331,11 @@ def _vcard(entity: dict) -> dict:
 
 
 def domain_rdap(domain: str, timeout: float = HTTP_TIMEOUT) -> dict:
-    """Registration data for a domain via rdap.org (which redirects to the registry)."""
+    """Registration data for a domain, straight from its registry (IANA RDAP bootstrap)."""
     out: dict = {"domain": domain, "error": None, "created": None, "age_days": None, "expires": None, "updated": None,
                  "registrar": None, "registrant": None, "abuse_emails": [], "status": [], "nameservers": [], "source": None}
     try:
-        r = httpx.get(RDAP_DOMAIN.format(domain=domain), timeout=timeout, follow_redirects=True,
-                      headers={"accept": "application/rdap+json", "user-agent": "MSPGather"})
+        r = rdap.get("dns", domain, timeout=timeout)
     except httpx.HTTPError as exc:
         out["error"] = f"RDAP lookup failed: {type(exc).__name__}"
         return out

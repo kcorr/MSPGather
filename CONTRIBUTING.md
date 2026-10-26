@@ -77,9 +77,9 @@ def mytool(target: str):
 
 ```js
 "use strict";
-function renderMyTool(main, params) {
+function renderMyTool(page, params) {
   const out = el("div");
-  main.append(card(null, hashForm("mytool", [
+  page.append(card(null, hashForm("mytool", [
     { name: "t", label: "Host", placeholder: "contoso.com", grow: true, required: true },
   ], params, "Check")), out);
   if (params.get("t")) runInto(out, "Checking…", () => api(`/api/mytool/${encodeURIComponent(params.get("t"))}`), renderMyResult);
@@ -91,19 +91,37 @@ function renderMyResult(d) {
   // nextSteps(...), details...
   return frag;
 }
-registerTool({ category: "network", group: "Certificates", id: "mytool", title: "My Tool", render: renderMyTool,
+registerTool({ id: "mytool", title: "My Tool", render: renderMyTool,
+  mode: "troubleshoot", group: "Network & web", access: "passive",
   icon: "M4 4h16v16H4z" /* 24x24 SVG path, stroke style */, keywords: "search words people would type",
   desc: "One sentence: what you give it and what it tells you." });
 ```
 
+### Workspace, group and access level
+
+Every tool lives in one workspace (`mode`): **discover** (profiling prospects from public data), **harden** (fixing a client's public-facing configuration) or **troubleshoot** (finding the cause of an issue). `group` is the sidebar heading inside it. The `PLACEMENT` table at the top of `app/static/core.js` is the single source of truth for existing tools; add your tool there too.
+
+`access` says what the tool touches on the network, is shown on every tool page and must be honest:
+
+| access | Meaning |
+|---|---|
+| `offline` | Only analyzes what the user pastes or types. Nothing is sent to the target. |
+| `passive` | Public information only: DNS, registries, certificate logs, Microsoft's public endpoints, an ordinary website visit. |
+| `contacts` | Ordinary client requests to the target (like a browser or Outlook): no probing. |
+| `active` | Probes the target (ports, protocol support, live SMTP). Requires the user to confirm authorization. |
+
+Tools for prospects must be `passive` or `offline`. **Active tools** must also be listed in `ACTIVE_PREFIXES` in `app/main.py`, so the server refuses requests without the authorization confirmation header (the shell adds it after the user ticks the box on the tool page).
+
+Set `landing: true` if your tool draws its own header (a hero section) instead of the standard page header.
+
 - Build all DOM with `el(tag, attrs, ...children)`. **Never use `innerHTML`** (inputs are untrusted).
 - Prefix any function or `const` you define at top level with your tool id (e.g. `tlsRenderChain`), because all tool files share one global scope. `render<ToolId>Tool` / `render<ToolId>Result` are fine.
-- Core helpers: `el, card, kv, table(cols, rows, rowClassFn), code(text), badge(sev, text), findingsList, verdict, facts, nextSteps, stat, link(toolId, params, text), api(path, {body}), runInto(target, label, fn, renderFn), hashForm, pasteBox({placeholder, onRun, sample}), worstSeverity, fmtDuration, fmtTime, addStyles(css), resultSev`.
-- Existing CSS classes: `card, stats/stat, kv, table.t (+ tr.hl), badge sev-*, verdict, notice, hint, sub, mono, code, grid-2, tree, transcript, btn, btn secondary, tool-form, field, check`. For anything else, `addStyles()` with selectors prefixed by your tool id.
+- Core helpers: `el, card(title, body, {icon, extra, flush}), kv, table(cols, rows, rowClassFn), code(text), badge(sev, text), findingsList, verdict, facts, nextSteps, stat, link(toolId, params, text), api(path, {body, method}), runInto(target, label, fn, renderFn, {steps}), hashForm, heroSearch, pasteBox({placeholder, onRun, sample}), toolCard, scoreRing(score, label, size), meter(pct), toast(msg), copyText, icon(name), worstSeverity, fmtDuration, fmtTime, fmtAgo, addStyles(css), resultSev`.
+- Existing CSS classes: `card, stats/stat, facts/fact, kv, table.t (+ tr.hl), badge sev-*, verdict, notice (+ warn), hint, sub, mono, code, grid-2, grid-3, tree, transcript, btn (+ secondary, ghost, sm, lg), tool-form, field, check, tabs, chips/chip-s, empty`. Colours come from CSS variables (`--panel, --border, --muted, --accent, --crit, --warn, --ok, --info, --mode-color`) so both themes work. For anything else, `addStyles()` with selectors prefixed by your tool id.
 - Pasted-text tools: use `pasteBox()` and run the analysis client-side or via POST.
 - Link to other tools where it helps (e.g. an IP → `link("ip", {t: ip}, ip)`, a domain → `link("domain", {d})`).
 
-Existing tool ids (for links): `discover, bulkaudit` (Discovery), `headers, ndr, domain, spf, smtp, blacklist, spfbuild, dmarcbuild, dmarcreport` (Email), `aadsts, token, tenant, dsreg, idconvert` (Identity), `autodiscover, m365net` (Microsoft 365), `dns, ip, tls, certdecode, ports, http, whois, subnet` (DNS & Network), `errcode, eventlog` (Windows), `url, lookalike` (Security).
+Existing tool ids (for links): Discover `discover, assessments, bulkaudit, lookalike, tenant`; Harden `harden, spfbuild, dmarcbuild, mtasts, parked, dmarcreport, tls, ports`; Troubleshoot `troubleshoot, headers, ndr, domain, spf, blacklist, smtp, aadsts, token, dsreg, idconvert, autodiscover, m365net, dns, ip, http, whois, certdecode, subnet, errcode, eventlog, url`; Administration `account, users, audit, settings, about`.
 
 ## Before opening a pull request
 

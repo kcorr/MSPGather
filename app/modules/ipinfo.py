@@ -8,10 +8,10 @@ from concurrent.futures import ThreadPoolExecutor
 
 import httpx
 
+from ..core import rdap
 from ..core.dns_utils import addresses, fcrdns, is_ip, make_resolver, normalize_domain, txt
 from .spf import analyze_spf
 
-RDAP_BOOTSTRAP = "https://rdap.org/ip/{ip}"
 HTTP_TIMEOUT = 8.0
 
 # Email services: matched on reverse DNS (most reliable), then ASN, then owner name.
@@ -126,10 +126,9 @@ def _walk_entities(entities: list, found: list, depth: int = 0) -> None:
 def rdap_lookup(ip: str) -> dict:
     out: dict = {"error": None}
     try:
-        r = httpx.get(RDAP_BOOTSTRAP.format(ip=ip), timeout=HTTP_TIMEOUT, follow_redirects=True,
-                      headers={"accept": "application/rdap+json"})
+        r = rdap.get(rdap.ip_kind(ip), ip, timeout=HTTP_TIMEOUT)
         if r.status_code != 200:
-            out["error"] = f"RDAP returned HTTP {r.status_code}"
+            out["error"] = f"RDAP returned HTTP {r.status_code}" + (" (rate limited, try again shortly)" if r.status_code == 429 else "")
             return out
         data = r.json()
     except (httpx.HTTPError, ValueError) as exc:

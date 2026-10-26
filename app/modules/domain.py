@@ -65,7 +65,15 @@ def check_mx(res, domain: str) -> dict:
         if cname:
             entry["cname"] = cname[0].target.to_text(omit_final_dot=True)
             entry["issues"].append(("warning", f"MX host is a CNAME to {entry['cname']} (RFC 5321/2181 violation; some senders refuse)."))
-        ips = addresses(res, host)
+        ips = addresses(res, host) or addresses(res, host)
+        if not ips:
+            for alt, label in (("doh-google", "Google"), ("doh-cloudflare", "Cloudflare")):
+                ips = addresses(make_resolver(alt), host)
+                if ips:
+                    entry["issues"].append(("warning", f"{host} doesn't resolve through every DNS resolver (it did through {label}'s). "
+                                                       "Senders whose resolver gets no answer can't deliver: check the mail provider's status, "
+                                                       "or the MX record if it was changed recently."))
+                    break
         if not ips:
             entry["issues"].append(("critical", f"MX host {host} does not resolve to any IP."))
         for ip in ips[:6]:
@@ -335,6 +343,9 @@ def check_mta_sts(res, domain: str) -> dict:
     F = out["findings"]
     recs, _ = txt(res, f"_mta-sts.{domain}")
     sts = [r for r in recs if r.lower().replace(" ", "").startswith("v=stsv1")]
+    if sts and not any(r.startswith("v=STSv1") for r in sts):
+        F.append(_f("critical", "MTA-STS", "MTA-STS record is ignored by senders",
+                    f"_mta-sts.{domain} must start with exactly 'v=STSv1' (case-sensitive, no leading space): {sts[0]}"))
     if not sts:
         F.append(_f("info", "MTA-STS", "MTA-STS not configured",
                     "Optional. MTA-STS makes senders require valid TLS to your MX and protects against downgrade attacks."))
@@ -345,7 +356,13 @@ def check_mta_sts(res, domain: str) -> dict:
     try:
         status, body, _meta = _safe_get(url, 64 * 1024, HTTP_TIMEOUT)
     except ValueError as exc:
-        reason = str(exc) if str(exc).startswith("Refusing") else "connection or TLS failure"
+        msg = str(exc)
+        reason = (msg if msg.startswith("Refusing") else
+                  f"mta-sts.{domain} doesn't exist in DNS" if "does not resolve" in msg else
+                  "its HTTPS certificate isn't valid for this name" if "CERTIFICATE" in msg.upper() or "SSL" in msg.upper() else
+                  "the connection timed out" if "timed out" in msg.lower() or "timeout" in msg.lower() else
+                  "the connection was refused (nothing answering on port 443)" if "refused" in msg.lower() else
+                  "the connection failed")
         F.append(_f("critical", "MTA-STS", "MTA-STS policy cannot be fetched",
                     f"{url}: {reason}. The TXT record exists, so senders that cached an enforce policy may refuse to deliver."))
         return out
@@ -382,8 +399,12 @@ def check_mta_sts(res, domain: str) -> dict:
 def check_tlsrpt(res, domain: str) -> dict:
     recs, _ = txt(res, f"_smtp._tls.{domain}")
     rec = next((r for r in recs if r.lower().replace(" ", "").startswith("v=tlsrptv1")), None)
-    f = (_f("ok", "TLS-RPT", "TLS-RPT configured") if rec else
-         _f("info", "TLS-RPT", "TLS-RPT not configured", "Optional. Senders report TLS delivery failures to you."))
+    if rec and not rec.startswith("v=TLSRPTv1"):
+        f = _f("warning", "TLS-RPT", "TLS-RPT record is ignored by senders",
+               f"_smtp._tls.{domain} must start with exactly 'v=TLSRPTv1' (case-sensitive, no leading space): {rec}")
+    else:
+        f = (_f("ok", "TLS-RPT", "TLS-RPT configured") if rec else
+             _f("info", "TLS-RPT", "TLS-RPT not configured", "Optional. Senders report TLS delivery failures to you."))
     return {"record": rec, "findings": [f]}
 
 

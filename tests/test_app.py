@@ -134,3 +134,112 @@ def test_aadsts_list_regex_is_linear():
     with pytest.raises(ValueError):
         analyze_signin("1" * 5000 + "x")
     assert time.monotonic() - t < 2
+
+
+# ---------------------------------------------------------------- active tests, saved reports, branding
+@pytest.fixture()
+def open_client(monkeypatch):
+    """A client with sign-in turned off, to reach tool routes without a session."""
+    monkeypatch.setattr(auth, "AUTH_ENABLED", False)
+    return TestClient(main.app, base_url="http://testserver")
+
+
+def test_active_tests_require_authorization_header(open_client):
+    # Refused before any connection is attempted.
+    assert open_client.get("/api/net/ports?host=192.0.2.10&ports=443").status_code == 428
+    assert open_client.get("/api/net/tls?h=192.0.2.10").status_code == 428
+    assert open_client.post("/api/smtp/test", json={"target": "192.0.2.10"}).status_code == 428
+
+
+def test_passive_tools_need_no_authorization(open_client):
+    r = open_client.get("/api/meta")
+    assert r.status_code == 200 and "org" in r.json() and "saving" in r.json()
+
+
+def test_workspace_save_list_get_delete():
+    from app.core import workspace
+    assert workspace.AVAILABLE
+    data = {"domain": "contoso.com", "headline": "contoso.com: test", "posture": {"grade": "B", "score": 84},
+            "talking_points": [{"kind": "risk", "title": "r"}, {"kind": "question", "title": "q"}], "website": {"title": "Contoso | Home"}}
+    rid = workspace.remember("discovery", "contoso.com", data)
+    saved = workspace.save(rid, "alice")
+    items = workspace.list_saved("discovery", "contoso.com")
+    assert items and items[0]["id"] == saved["id"] and items[0]["grade"] == "B" and items[0]["org"] == "Contoso"
+    assert items[0]["counts"] == {"risk": 1, "opportunity": 0, "question": 1}
+    assert workspace.get(saved["id"])["data"]["headline"] == "contoso.com: test"
+    with pytest.raises(PermissionError):
+        workspace.delete(saved["id"], "bob", is_admin=False)
+    workspace.delete(saved["id"], "alice", is_admin=False)
+    with pytest.raises(LookupError):
+        workspace.get(saved["id"])
+
+
+def test_workspace_refuses_unknown_result_ids():
+    from app.core import workspace
+    with pytest.raises(ValueError):
+        workspace.save("not-a-real-id", "alice")
+
+
+def test_assessments_api(open_client):
+    assert open_client.post("/api/assessments", json={"result_id": "nope"}).status_code == 400
+    assert open_client.get("/api/assessments/zzzz").status_code == 404
+    r = open_client.get("/api/assessments?kind=discovery")
+    assert r.status_code == 200 and r.json()["available"] is True
+
+
+def test_branding_settings_are_sanitised(open_client):
+    r = open_client.put("/api/admin/settings", json={"org_name": "Contoso IT\x00\x1b Services", "org_contact": "help@contoso.example"})
+    assert r.status_code == 200
+    assert r.json()["org_name"] == "Contoso IT Services"
+    assert open_client.get("/api/meta").json()["org"]["name"] == "Contoso IT Services"
+
+
+# ---------------------------------------------------------------- data-source hygiene
+class _A:
+    def __init__(self, address):
+        self.address = address
+
+
+def test_blocklist_canary_marks_refusing_lists_unusable(monkeypatch):
+    from app.modules import blacklist
+
+    blacklist._canary_cache.clear()
+    answers = {
+        "2.0.0.127.bl.spamcop.net": ([_A("127.0.0.2")], {"status": "ok", "error": None}),        # healthy list
+        "2.0.0.127.zen.spamhaus.org": ([], {"status": "nxdomain", "error": None}),               # silently refused
+        "test.uribl.com.multi.uribl.com": ([_A("127.0.0.1")], {"status": "ok", "error": None}),  # URIBL refusal code
+    }
+    monkeypatch.setattr(blacklist, "resolve", lambda res, name, rtype, fallback=False: answers.get(name, ([], {"status": "nxdomain", "error": None})))
+    ok = next(l for l in blacklist.IP_LISTS if l["zone"] == "bl.spamcop.net")
+    zen = next(l for l in blacklist.IP_LISTS if l["zone"] == "zen.spamhaus.org")
+    uribl = next(l for l in blacklist.DOMAIN_LISTS if l["zone"] == "multi.uribl.com")
+    assert blacklist._canary(None, "test", ok, False) is None
+    assert "can't be trusted" in blacklist._canary(None, "test", zen, False)
+    assert "refused" in blacklist._canary(None, "test", uribl, True).lower()
+
+
+def test_defunct_blocklists_removed():
+    from app.modules import blacklist
+    zones = {l["zone"] for l in blacklist.IP_LISTS + blacklist.DOMAIN_LISTS}
+    assert "ix.dnsbl.manitu.net" not in zones and "db.wpbl.info" not in zones
+
+
+def test_rdap_bootstrap_matching():
+    from app.core import rdap
+    dns = [[["com", "net"], ["https://rdap.verisign.com/com/v1/"]], [["uk"], ["https://rdap.nominet.uk/uk/"]]]
+    ipv4 = [[["8.0.0.0/8"], ["https://rdap.arin.net/registry/", "http://rdap.arin.net/registry/"]],
+            [["8.8.0.0/16"], ["https://more.specific.example/"]]]
+    assert rdap.base_url("dns", "github.com", dns) == "https://rdap.verisign.com/com/v1/"
+    assert rdap.base_url("dns", "bbc.co.uk", dns) == "https://rdap.nominet.uk/uk/"
+    assert rdap.base_url("dns", "contoso.de", dns) is None
+    assert rdap.base_url("ipv4", "8.8.8.8", ipv4) == "https://more.specific.example/"
+    assert rdap.base_url("ipv4", "8.1.2.3", ipv4) == "https://rdap.arin.net/registry/"
+
+
+def test_saved_reports_drop_personal_emails():
+    from app.core.workspace import _redact
+    out = _redact({"soa": {"contact": "john.smith@contoso.com"}, "dmarc": "v=DMARC1; rua=mailto:dmarc@contoso.com,mailto:jane@contoso.com",
+                   "list": ["hostmaster@contoso.com", "f4a1b2c3d4e5@rua.vendor.example"]})
+    assert out["soa"]["contact"] == "[name removed]@contoso.com"
+    assert "mailto:dmarc@contoso.com" in out["dmarc"] and "jane@" not in out["dmarc"]
+    assert out["list"] == ["hostmaster@contoso.com", "f4a1b2c3d4e5@rua.vendor.example"]

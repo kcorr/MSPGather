@@ -1,2 +1,2 @@
-"""MSPGather: troubleshooting and discovery toolkit for MSP engineers."""
-__version__ = "1.0.0"
+"""MSPGather: discovery, hardening and troubleshooting toolkit for MSP engineers."""
+__version__ = "1.1.0"

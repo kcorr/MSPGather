@@ -1,4 +1,4 @@
-"""MSPGather: troubleshooting and discovery toolkit for MSP engineers."""
+"""MSPGather: discovery, hardening and troubleshooting toolkit for MSP engineers."""
 from __future__ import annotations
 
 import asyncio
@@ -20,7 +20,7 @@ from starlette.concurrency import run_in_threadpool
 from . import __version__, modules
 from .auth_api import client_ip
 from .auth_api import router as auth_router
-from .core import auth
+from .core import auth, workspace
 from .core.dns_utils import resolver_names
 from .core.http import run as _run
 from .modules.blacklist import check_target
@@ -39,6 +39,7 @@ API_DOCS = os.environ.get("MSPGATHER_API_DOCS", "false").strip().lower() in ("1"
 MAX_HEAVY = max(1, int(os.environ.get("MSPGATHER_MAX_CONCURRENT_SCANS", "6")))
 
 auth.init()
+workspace.init()
 app = FastAPI(title="MSPGather", version=__version__, openapi_url="/api/openapi.json",
               docs_url="/api/docs" if API_DOCS else None, redoc_url=None)
 app.include_router(auth_router)
@@ -108,10 +109,14 @@ def login_page():
 # Reachable without a full session. /api/auth/* handlers enforce their own stage.
 PUBLIC_PATHS = {"/login", "/login.js", "/styles.css", "/logo.svg", "/api/health", "/favicon.ico"}
 # Requests that fan out to many DNS/HTTP/TCP lookups share a concurrency cap.
-HEAVY_PREFIXES = ("/api/discover", "/api/sec/lookalike", "/api/bulk", "/api/net/ports", "/api/blacklist", "/api/domain/",
+HEAVY_PREFIXES = ("/api/discover", "/api/harden", "/api/builder/", "/api/sec/lookalike", "/api/bulk", "/api/net/ports", "/api/blacklist", "/api/domain/",
                   "/api/smtp", "/api/dmarcreport", "/api/net/tls", "/api/m365/autodiscover", "/api/sec/url",
                   "/api/net/http", "/api/cert/fetch", "/api/identity/tenant")
 _heavy = asyncio.Semaphore(MAX_HEAVY)
+# Active tests (port scan, TLS protocol probing, live SMTP session) only run after the engineer
+# confirms they're authorized to test the target. The browser sends this header once the box is
+# ticked; a custom header also can't be forged by a cross-site link or form.
+ACTIVE_PREFIXES = ("/api/net/ports", "/api/net/tls", "/api/smtp/")
 _uploads = asyncio.Semaphore(2)  # report uploads decompress up to 60 MB each: keep memory bounded
 
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; "
@@ -191,6 +196,11 @@ async def gate(request: Request, call_next):
             elif not sess and not is_auth_api:
                 return _deny(request, 401, "Sign in required.")
 
+    authorized = request.headers.get("x-mspg-authorized") == "1"
+    if path.startswith(ACTIVE_PREFIXES) and not authorized:
+        return _deny(request, 428, "This is an active test: it probes the target system. Confirm you own it or are authorized to test it "
+                                   "(tick the authorization box on the tool page), then run it again.")
+
     heavy = path.startswith(HEAVY_PREFIXES)
     sem = _uploads if path.startswith("/api/dmarcreport") else _heavy
     if heavy:
@@ -206,8 +216,11 @@ async def gate(request: Request, call_next):
 
     # Who ran which tool (target in the URL; pasted bodies are never logged).
     if (auth.AUTH_ENABLED and auth.AUDIT_TOOL_USAGE and sess and sess["stage"] == "full" and path.startswith("/api/")
-            and not path.startswith(("/api/auth/", "/api/admin/", "/api/health", "/api/meta"))):
+            and not path.startswith(("/api/auth/", "/api/admin/", "/api/health", "/api/meta"))
+            and not (path.startswith("/api/assessments") and request.method == "GET")):  # viewing saved reports isn't tool use
         detail = f"{request.method} {path}" + (f"?{request.url.query}" if request.url.query and request.method == "GET" else "")
+        if path.startswith(ACTIVE_PREFIXES):
+            detail += " [active test, authorization confirmed]"
         await run_in_threadpool(auth.audit, "tool", sess["username"], client_ip(request), detail[:400])
     return _secure_headers(response, request)
 
@@ -237,7 +250,9 @@ def health(request: Request):
 
 @app.get("/api/meta")
 def meta():
-    return {"version": __version__, "resolvers": resolver_names(), "record_types": RECORD_TYPES}
+    org = workspace.get_settings()
+    return {"version": __version__, "resolvers": resolver_names(), "record_types": RECORD_TYPES, "saving": workspace.AVAILABLE,
+            "org": {"name": org["org_name"], "website": org["org_website"], "contact": org["org_contact"]}}
 
 
 @app.post("/api/headers/analyze")
